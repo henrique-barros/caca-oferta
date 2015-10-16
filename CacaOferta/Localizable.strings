@@ -5,3 +5,38 @@
   Created by Henrique Barros on 10/16/15.
   Copyright © 2015 Henrique Barros. All rights reserved.
 */
+
+
+"erro" = "Erro";
+"atencao" = "Atenção";
+"ok" = "Ok";
+
+
+// MapaProdutoController
+"msg_erro_suporte_geolocalizacao" = "Geolozalização não é suportada pelo seu dispositivo.";
+"msg_erro_permissao" = "Você deve permitir ao Caça Oferta permissão para obter a localização do seu dispositivo.";
+
+//AdicionarLojaViewController
+"msg_loja_adicionada" = "Loja cadastrada com sucesso.";
+"msg_erro_cadastro_loja" = "Ocorreu um erro no cadastro da loja.";
+"msg_erro_informacoes_loja" = "Faltam informações obrigatórias a serem preenchidas para o cadastro da loja.";
+"msg_erro_busca_minha_localizacao" = "Não foi possível encontrar sua localização, verifique se o GPS está ativado.";
+"msg_erro_busca_endereco" = "Não foi possível encontrar a localização do endereço entrado. Verifique se foi digitado corretamente.";
+
+//CadastrarUsuarioTableViewController
+"msg_ok_usuario_cadastrado" = "Usuário cadastrado com sucesso.";
+"msg_erro_cadastro_usuario" = "Ocorreu um erro no cadastro do usuário.";
+"msg_erro_informacoes_usuario" = "Faltam informações obrigatórias a serem preenchidas para o cadastro do usuário.";
+
+//LoginViewController
+"msg_erro_login" = "Erro ao realizar login. Confira os dados ou sua conexão com a rede.";
+
+//AdicionarProdutosViewController
+"msg_erro_informacoes_produto" = "Faltam informações obrigatórias a serem preenchidas para o cadastro do produto.";
+"msg_produto_adicionado" = "Produto cadastrado com sucesso.";
+"msg_erro_cadastro_produto" = "Ocorreu um erro no cadastro do produto.";
+
+//NovoItemDesejadoViewController
+"msg_erro_informacoes_item_desejado" = "Faltam informações obrigatórias a serem preenchidas para o cadastro de item desejado.";
+"msg_item_adicionado" = "Item cadastrado com sucesso.";
+"msg_erro_cadastro_item" = "Ocorreu um erro no cadastro do item.";

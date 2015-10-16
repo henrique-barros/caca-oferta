@@ -24,7 +24,7 @@ class Loja: NSObject, MKAnnotation {
   var nome: String
   var descricao: String
   var id: String
-  var produtos: [NSMutableDictionary]
+  var produtos: PFRelation
   var dono: String
   
   init(coordinate: CLLocationCoordinate2D, nome: String, descricao: String, dono: String) {
@@ -32,7 +32,7 @@ class Loja: NSObject, MKAnnotation {
     self.nome = nome
     self.descricao = descricao
     self.id = NSUUID().UUIDString
-    self.produtos = []
+    self.produtos = PFRelation()
     self.dono = dono
   }
   
@@ -43,7 +43,7 @@ class Loja: NSObject, MKAnnotation {
     nome = dicionario.objectForKey(lojaKeyNome) as! String
     id = dicionario.objectForKey(lojaKeyId) as! String
     descricao = dicionario.objectForKey(lojaKeyDescricao) as! String
-    produtos = dicionario.objectForKey(lojaKeyProdutos) as! [NSMutableDictionary]
+    produtos = dicionario.objectForKey(lojaKeyProdutos) as! PFRelation
     dono = dicionario.objectForKey(lojaKeyDono) as! String
   }
   
@@ -53,7 +53,7 @@ class Loja: NSObject, MKAnnotation {
     nome = parseObject.objectForKey(lojaKeyNome) as! String
     descricao = parseObject.objectForKey(lojaKeyDescricao) as! String
     id = parseObject.objectForKey(lojaKeyId) as! String
-    produtos = parseObject.objectForKey(lojaKeyProdutos) as! [NSMutableDictionary]
+    produtos = parseObject.objectForKey(lojaKeyProdutos) as! PFRelation
     dono = parseObject.objectForKey(lojaKeyDono) as! String
   }
   
@@ -64,7 +64,7 @@ class Loja: NSObject, MKAnnotation {
     id = decoder.decodeObjectForKey(lojaKeyNome) as! String
     nome = decoder.decodeObjectForKey(lojaKeyNome) as! String
     descricao = decoder.decodeObjectForKey(lojaKeyDescricao) as! String
-    produtos = decoder.decodeObjectForKey(lojaKeyProdutos) as! [NSMutableDictionary]
+    produtos = decoder.decodeObjectForKey(lojaKeyProdutos) as! PFRelation
     dono = decoder.decodeObjectForKey(lojaKeyDono) as! String
   }
   
@@ -85,8 +85,8 @@ class Loja: NSObject, MKAnnotation {
     objetoParse.setObject(nome, forKey: lojaKeyNome)
     objetoParse.setObject(descricao, forKey: lojaKeyDescricao)
     objetoParse.setObject(id, forKey: lojaKeyId)
-    objetoParse.setObject(produtos, forKey: lojaKeyProdutos)
     objetoParse.setObject(dono, forKey: lojaKeyDono)
+    
     
     return objetoParse
   }
@@ -101,4 +101,6 @@ class Loja: NSObject, MKAnnotation {
     dicionario.setObject(descricao, forKey: lojaKeyDescricao)
     return dicionario
   }
+  
+  
 }

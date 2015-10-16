@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     //Teste cloud code
     PFCloud.callFunctionInBackground("hello", withParameters: nil, target: self, selector: Selector("testaCloudCode:"))
     
+    
     //Enable push notifications
     /*let userNotificationTypes = (UIUserNotificationType.Alert |  UIUserNotificationType.Badge |  UIUserNotificationType.Sound);
     
@@ -105,7 +106,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
   
   //TODO TIRAR
   func testaCloudCode(resposta: AnyObject) {
+    
+    print(resposta)
+    /*
     print(resposta.description)
+    
     if resposta.isKindOfClass(NSDictionary) {
       let resposta: NSDictionary = resposta as! NSDictionary
       print(resposta .objectForKey("result"))
@@ -113,6 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     else {
       print("Não é dicionário")
     }
+    */
   }
   
   
@@ -133,6 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
   
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
     PFPush.handlePush(userInfo)
+    print("didReceiveRemoteNotification")
     if application.applicationState == UIApplicationState.Inactive {
       PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
     }
@@ -221,16 +228,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         push.sendPushInBackground()
       }
     }*/
-    
-    let parameters = NSMutableDictionary()
-    if let userLocation = self.locationManager.location {
-      parameters.setObject(userLocation.coordinate.latitude, forKey: keyLatitude)
-      parameters.setObject(userLocation.coordinate.longitude, forKey: keyLongitude)
-      //PFCloud.callFunctionInBackground("enviaLocalizacao", withParameters: parameters as [NSObject : AnyObject])
-      PFCloud.callFunctionInBackground("enviaLocalizacao", withParameters: parameters as [NSObject : AnyObject], target: self, selector: Selector("testaCloudCode:"))
+    if (loggedUser.username != nil) {
+      print(loggedUser.username)
+      let parameters = NSMutableDictionary()
+      if let userLocation = self.locationManager.location {
+        parameters.setObject(userLocation.coordinate.latitude, forKey: keyLatitude)
+        parameters.setObject(userLocation.coordinate.longitude, forKey: keyLongitude)
+        parameters.setObject(loggedUser.username!, forKey: usuarioKeyUsername)
+        parameters.setObject(loggedUser.objectForKey(usuarioKeyItensDesejados)!, forKey: usuarioKeyItensDesejados)
+        //PFCloud.callFunctionInBackground("enviaLocalizacao", withParameters: parameters as [NSObject : AnyObject])
+        PFCloud.callFunctionInBackground("enviaLocalizacao", withParameters: parameters as [NSObject : AnyObject], target: self, selector: Selector("testaCloudCode:"))
+      }
     }
-    
-    
   }
   
   // CLLocationManagerDelegate

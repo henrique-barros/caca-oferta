@@ -64,6 +64,11 @@ class ListaLojasTableViewController: UITableViewController {
     self.tabBarController?.navigationItem.setRightBarButtonItem(botaoAdicionar, animated: false)
   }
   
+  func onButtonTouchUpInsideNavigationBar(sender: UIButton) {
+    let novaLojaVC = self.storyboard?.instantiateViewControllerWithIdentifier(cadastrarLojaID)
+    self.navigationController?.showViewController(novaLojaVC!, sender: self)
+  }
+  
   func carregaLojas(lojas: NSObject) {
     print(lojas.description)
     if let objetosParseLojaBuscadas = lojas as? [PFObject] {

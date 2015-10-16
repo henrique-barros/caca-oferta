@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Camisetas-->
@@ -50,7 +51,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="WAB-GC-Yli" kind="relationship" relationship="viewControllers" id="nXx-Gb-yKy"/>
-                        <segue destination="tcp-8u-ZLD" kind="relationship" relationship="viewControllers" id="PLd-5r-AF7"/>
                         <segue destination="yhk-ik-GfH" kind="relationship" relationship="viewControllers" id="F8h-Ba-Vuk"/>
                     </connections>
                 </tabBarController>
@@ -144,7 +144,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n78-na-kax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="-155"/>
+            <point key="canvasLocation" x="-254.25" y="-155.25"/>
         </scene>
         <!--Caça Oferta-->
         <scene sceneID="gyt-Le-peY">
@@ -155,7 +155,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xbG-WC-vIe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4gH-iK-C69">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D61-jZ-bc6">
@@ -163,17 +163,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="254" y="142" width="60" height="28"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Senha:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xt-7b-U8t">
                                 <rect key="frame" x="8" y="188" width="58" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="246" y="183" width="60" height="28"/>
+                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="quh-fS-vxE">
                                 <rect key="frame" x="82" y="188" width="230" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="314" y="180" width="232" height="30"/>
+                                </variation>
                             </textField>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIn-s3-ch5">
                                 <rect key="frame" x="270" y="227" width="42" height="30"/>
@@ -181,31 +190,39 @@
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="502" y="225" width="44" height="32"/>
+                                </variation>
                                 <connections>
                                     <action selector="onButtonTouchUpInside:" destination="oXm-EN-l1S" eventType="touchUpInside" id="ry4-gM-ipV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLN-Wf-a3q">
-                                <rect key="frame" x="8" y="227" width="68" height="30"/>
-                                <state key="normal" title="Cadastrar">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onButtonTouchUpInside:" destination="oXm-EN-l1S" eventType="touchUpInside" id="enW-Ux-f2j"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-vT-1TS">
                                 <rect key="frame" x="82" y="153" width="230" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="314" y="142" width="232" height="30"/>
+                                </variation>
                             </textField>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLN-Wf-a3q">
+                                <rect key="frame" x="8" y="227" width="68" height="30"/>
+                                <state key="normal" title="Cadastrar">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="246" y="225" width="68" height="32"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onButtonTouchUpInside:" destination="oXm-EN-l1S" eventType="touchUpInside" id="enW-Ux-f2j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Caça Oferta" id="SIx-Sh-9la"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="560"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="textFieldLogin" destination="oyA-vT-1TS" id="kP2-KV-hhR"/>
                         <outlet property="textFieldSenha" destination="quh-fS-vxE" id="p91-Jg-494"/>
@@ -215,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eto-di-L88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="-155"/>
+            <point key="canvasLocation" x="248" y="-152"/>
         </scene>
         <!--Cadastrar Usuario Table View Controller-->
         <scene sceneID="txK-5I-u2W">
@@ -349,11 +366,12 @@
                     <size key="freeformSize" width="320" height="560"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" id="fmK-Tc-3iE"/>
+                        <segue destination="k3s-cg-UHo" kind="show" id="sQU-L3-L4l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsc-vM-b4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="-155"/>
+            <point key="canvasLocation" x="1191" y="-145"/>
         </scene>
         <!--Adicionar Loja-->
         <scene sceneID="BaZ-PG-7js">
@@ -407,11 +425,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Endereço" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4W-3y-TuF">
-                                                    <rect key="frame" x="75" y="4" width="237" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3h7-vP-T4N">
                                                     <rect key="frame" x="20" y="38" width="72" height="30"/>
                                                     <state key="normal" title="Meu Local">
@@ -436,6 +449,11 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Endereço" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4W-3y-TuF">
+                                                    <rect key="frame" x="75" y="4" width="237" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -481,7 +499,88 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzF-Rn-iAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="550"/>
+            <point key="canvasLocation" x="1191" y="-1460"/>
+        </scene>
+        <!--Novo Item-->
+        <scene sceneID="LUX-hz-lG4">
+            <objects>
+                <viewController storyboardIdentifier="novoItemVC" title="Novo Item" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k3s-cg-UHo" customClass="NovoItemDesejadoViewController" customModule="CacaOferta" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvg-Ub-RO5"/>
+                        <viewControllerLayoutGuide type="bottom" id="M8V-1d-j4K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x64-oZ-NsF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item a comprar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re0-fo-Kme">
+                                <rect key="frame" x="20" y="104" width="126" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="CvW-Lt-0eM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item desejado" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NRj-rP-VeM">
+                                <rect key="frame" x="154" y="105" width="146" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfl-hD-chU">
+                                <rect key="frame" x="20" y="140" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="24" y="123" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-Aj-nAz">
+                                <rect key="frame" x="91" y="133" width="209" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="95" y="133" width="449" height="0.0"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sph-Pt-2iF">
+                                <rect key="frame" x="212" y="176" width="88" height="30"/>
+                                <state key="normal" title="Adicionar">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onButtonTouchUpInside:" destination="k3s-cg-UHo" eventType="touchUpInside" id="6cv-l2-0h5"/>
+                                    <action selector="onButtonTouchUpInside:" destination="KV8-Gh-dxt" eventType="touchUpInside" id="Yle-Mq-bsc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Re0-fo-Kme" firstAttribute="centerY" secondItem="NRj-rP-VeM" secondAttribute="centerY" id="0KE-QW-ETX"/>
+                            <constraint firstItem="Re0-fo-Kme" firstAttribute="top" secondItem="bvg-Ub-RO5" secondAttribute="bottom" constant="40" id="1ro-4H-Zoi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3fW-Aj-nAz" secondAttribute="trailing" constant="4" id="2G4-Mn-6ho"/>
+                            <constraint firstItem="Re0-fo-Kme" firstAttribute="leading" secondItem="x64-oZ-NsF" secondAttribute="leadingMargin" constant="4" id="BbK-7v-34H"/>
+                            <constraint firstItem="3fW-Aj-nAz" firstAttribute="top" secondItem="Re0-fo-Kme" secondAttribute="bottom" constant="8" symbolic="YES" id="K98-IN-8xi"/>
+                            <constraint firstItem="3fW-Aj-nAz" firstAttribute="top" secondItem="NRj-rP-VeM" secondAttribute="bottom" constant="8" symbolic="YES" id="Lk8-1A-gfu"/>
+                            <constraint firstItem="NRj-rP-VeM" firstAttribute="leading" secondItem="Re0-fo-Kme" secondAttribute="trailing" constant="8" symbolic="YES" id="VOW-e4-ajN"/>
+                            <constraint firstItem="3fW-Aj-nAz" firstAttribute="trailing" secondItem="NRj-rP-VeM" secondAttribute="trailing" id="bKR-ZM-ytA"/>
+                            <constraint firstItem="M8V-1d-j4K" firstAttribute="top" secondItem="3fW-Aj-nAz" secondAttribute="bottom" constant="351" id="hqJ-VH-OCq"/>
+                            <constraint firstItem="3fW-Aj-nAz" firstAttribute="centerY" secondItem="yfl-hD-chU" secondAttribute="centerY" id="j9G-Rb-bcF"/>
+                            <constraint firstItem="3fW-Aj-nAz" firstAttribute="leading" secondItem="x64-oZ-NsF" secondAttribute="leadingMargin" constant="75" id="jFD-jB-umX"/>
+                            <constraint firstItem="Re0-fo-Kme" firstAttribute="leading" secondItem="yfl-hD-chU" secondAttribute="leading" id="xMU-lR-DYh"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textFieldNome" destination="NRj-rP-VeM" id="j3k-bX-cP1"/>
+                        <outlet property="textViewTags" destination="3fW-Aj-nAz" id="Mjn-5K-ojn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgk-hf-OPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="561"/>
         </scene>
         <!--Minhas Lojas-->
         <scene sceneID="N1J-4b-CGX">
@@ -522,6 +621,7 @@
                     <size key="freeformSize" width="320" height="560"/>
                     <connections>
                         <segue destination="neq-I4-l4g" kind="show" id="mOR-Dk-DkW"/>
+                        <segue destination="tcp-8u-ZLD" kind="show" id="5Ai-R1-nbt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVc-50-054" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -587,11 +687,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-35-xDK">
-                                <rect key="frame" x="106" y="89" width="198" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Marca:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJa-zx-2Ff">
                                 <rect key="frame" x="16" y="131" width="53" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -604,13 +699,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valor:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uew-vn-OYa">
-                                <rect key="frame" x="16" y="169" width="43" height="21"/>
+                                <rect key="frame" x="16" y="169" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tags:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh3-gy-Mql">
-                                <rect key="frame" x="16" y="206" width="41" height="21"/>
+                                <rect key="frame" x="16" y="206" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -636,6 +731,11 @@
                                     <action selector="onButtonTouchUpInside:" destination="KV8-Gh-dxt" eventType="touchUpInside" id="5zk-a7-GJo"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-35-xDK">
+                                <rect key="frame" x="106" y="89" width="198" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

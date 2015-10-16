@@ -14,6 +14,7 @@ let tagDeleteButton = 12
 let mapaProdutoController = "mapaProdutoController"
 let buttonAdicionarWidth: CGFloat = 24.0
 let buttonAdicionarHeight: CGFloat = 24.0
+let novoItemVC = "novoItemVC"
 
 
 class ListaComprasTVC: UITableViewController {
@@ -25,47 +26,32 @@ class ListaComprasTVC: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     fIniciar()
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   func fIniciar() {
-    vlsItens = NSMutableArray(array: ["Camiseta", "Calça", "Óculos", "Tênis",
-      "Livro O Capital", "Cabeleireiro"])
+    vlsItens = loggedUser.objectForKey(usuarioKeyItensDesejados) as! NSMutableArray
   }
   
   // MARK: - Table view data source
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    // #warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    
     return vlsItens.count
   }
   
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    //println((tableView.dequeueReusableCellWithIdentifier(itemCell) as! UITableViewCell).description)
     let cell: UITableViewCell = (tableView.dequeueReusableCellWithIdentifier(itemCell))!
     
     let voLabel = cell.viewWithTag(tagItem) as? UILabel
-    print(vlsItens.objectAtIndex(indexPath.row).description)
-    print(voLabel?.description)
-    voLabel?.text = vlsItens.objectAtIndex(indexPath.row) as? String
+    voLabel?.text = vlsItens.objectAtIndex(indexPath.row).objectForKey(usuarioKeyItemDesejadoDescricao) as? String
     return cell
   }
   
@@ -97,7 +83,8 @@ class ListaComprasTVC: UITableViewController {
   }
   
   func adicionarItem() {
-    print("adicionarItem")
+    let novoItemViewController = self.storyboard?.instantiateViewControllerWithIdentifier(novoItemVC)
+    self.navigationController?.showViewController(novoItemViewController!, sender: self)
   }
   
 }

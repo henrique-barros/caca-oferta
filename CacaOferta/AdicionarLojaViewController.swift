@@ -23,7 +23,6 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
   var locais = [MKPlacemark]()
   
   override func viewDidLoad() {
-    print("viewDidLoad")
     locationManager.delegate = self
     locationManager.requestAlwaysAuthorization()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -41,7 +40,7 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
         buscarMinhaLocalizacaoESalvarLocal()
         atualizarMapa()
       default:
-        print("nada")
+        break
     }
   }
   @IBAction func onButtonTouchUpInsideNavigationBar(sender: UIButton) {
@@ -49,33 +48,44 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
       case tagButtonAdd:
         adicionarLojaComDadosDaTela()
       default:
-        print("nada")
+        break
     }
   }
   
   func adicionarLojaComDadosDaTela() {
-    if (!textFieldEndereco.text!.isEmpty && !textFieldNome.text!.isEmpty) {
+    if ((!textFieldEndereco.text!.isEmpty || !mapView.annotations.isEmpty) && !textFieldNome.text!.isEmpty) {
       print(loggedUser.username)
       let annotation = mapView.annotations.first as MKAnnotation?
       let loja = Loja(coordinate: (annotation?.coordinate)!, nome: textFieldNome.text!, descricao: "",dono: loggedUser.username!).objetoParseComLoja()
       loja.saveInBackgroundWithBlock { (succeeded, error) -> Void in
         if succeeded {
-          print("Object Uploaded")
+          let lojaCadastrada = UIAlertAction(title: "OK", style: .Default) { (action) in
+            self.textFieldNome.resignFirstResponder()
+            self.textFieldEndereco.resignFirstResponder()
+            self.dismissViewControllerAnimated(true, completion: nil)
+          }
+          showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_loja_adicionada", comment: ""), viewController: self, action: lojaCadastrada)
         } else {
           print("Error: \(error) \(error!.userInfo)")
+          showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_cadastro_loja", comment: ""), viewController: self)
         }
       }
     }
     else {
       //TODO MENSAGEM DE ERRO
       print("Falta informação")
+      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_loja", comment: ""), viewController: self)
     }
   }
   
   func buscarMinhaLocalizacaoESalvarLocal() {
-    var placeMarks = [MKPlacemark]()
-    placeMarks.append(MKPlacemark(coordinate: locationManager.location!.coordinate, addressDictionary: nil))
-    locais = placeMarks
+    if (locationManager.location != nil) {
+      var placeMarks = [MKPlacemark]()
+      placeMarks.append(MKPlacemark(coordinate: locationManager.location!.coordinate, addressDictionary: nil))
+      locais = placeMarks
+    } else {
+      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_busca_minha_localizacao", comment: ""), viewController: self)
+    }
   }
   
   func buscarLocalizacaoESalvarLocal(endereco: String) {
@@ -96,6 +106,7 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
       else {
         self.locais = []
         print(error!.description)
+        showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_busca_endereco", comment: ""), viewController: self)
       }
     }
   }
@@ -106,7 +117,6 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
   }
   
   func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-    print("atualizou local")
     currentLocation = newLocation
   }
   func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       case tagBotaoCadastrar:
         loadCadastrar()
       default:
-        print("Botao desconhecido")
+        break
     }
   }
   
@@ -62,6 +62,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     else {
       print("dados errados")
+      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_login", comment: ""), viewController: self)
     }
   }
   
@@ -78,7 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       self.view.viewWithTag(tagTextFieldSenha)?.resignFirstResponder()
       validarUsuarioEIniciar(textFieldLogin.text!, senha: textFieldSenha.text!)
     default:
-      print("TextField Nao Reconhecido")
+      break
     }
     return true
   }

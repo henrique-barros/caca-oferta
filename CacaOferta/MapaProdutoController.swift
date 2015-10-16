@@ -18,7 +18,6 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     locationManager.delegate = self
     locationManager.requestAlwaysAuthorization()
     locationManager.startUpdatingLocation()
@@ -32,11 +31,11 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
   
   func iniciarMonitoramentoLoja(loja: Loja) {
     if !CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion) {
-      showSimpleAlertWithTitle("Erro", message: "Geolozalização não é suportada pelo seu dispositivo.", viewController: self)
+      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_suporte_geolocalizacao", comment: ""), viewController: self)
       return
     }
     if CLLocationManager.authorizationStatus() != .AuthorizedAlways {
-      showSimpleAlertWithTitle("Atenção", message: "Você deve permitir ao Caça Oferta permissão para obter a localização do seu dispositivo.", viewController: self)
+      showSimpleAlertWithTitle(NSLocalizedString("atencao", comment: ""), message: NSLocalizedString("msg_erro_permissao", comment: ""), viewController: self)
     }
     let regiao = regiaoDaLoja(loja)
     locationManager.startMonitoringForRegion(regiao)

@@ -41,22 +41,15 @@ class AdicionarProdutosViewController: UIViewController {
       case tagButtonAdicionar:
         adicionaProdutoComDadosDaTela()
       default:
-        print("Botao desconhecido")
+        break
     }
   }
   
   func adicionaProdutoComDadosDaTela() {
     //TODO MENSAGEM DE ERRO
-    if textFieldDescricao.text!.isEmpty {
-      print("Sem descricao")
-    }
-    else if textFieldMarca.text!.isEmpty {
-      print("Sem marca")
-    }
-    else if textFieldValor.text!.isEmpty {
-      print("Sem valor")
-    }
-    else {
+    if textFieldDescricao.text!.isEmpty || textFieldMarca.text!.isEmpty || textFieldValor.text!.isEmpty {
+      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_produto", comment: ""), viewController: self)
+    } else {
       let tags: [String] = textViewTags.text.componentsSeparatedByString(",")
       let scanner = NSScanner(string: textFieldValor.text!)
       var preco: Double = Double()
@@ -64,13 +57,28 @@ class AdicionarProdutosViewController: UIViewController {
       let produto = Produto(descricao: textFieldDescricao.text!, loja: self.loja, marca: textFieldMarca.text!, preco: preco, tags: tags).objetoParseComProduto()
       produto.saveInBackgroundWithBlock { (succeeded, error) -> Void in
         if succeeded {
-          print("Object Uploaded")
+          self.relacionarLojaComProduto(produto)
+          let produtoCadastrado = UIAlertAction(title: "OK", style: .Default) { (action) in
+            self.textFieldDescricao.resignFirstResponder()
+            self.textFieldMarca.resignFirstResponder()
+            self.textFieldValor.resignFirstResponder()
+            self.textViewTags.resignFirstResponder()
+            self.dismissViewControllerAnimated(true, completion: nil)
+          }
+          showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_produto_adicionado", comment: ""), viewController: self, action: produtoCadastrado)
         } else {
           print("Error: \(error) \(error!.userInfo)")
+          showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_cadastro_produto", comment: ""), viewController: self)
         }
       }
       
     }
+  }
+  
+  func relacionarLojaComProduto(produto: PFObject) {
+    let relacaoProdutos = loja.relationForKey(lojaKeyProdutos)
+    relacaoProdutos.addObject(produto)
+    loja.saveInBackground()
   }
   
   /*
