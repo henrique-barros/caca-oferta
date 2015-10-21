@@ -60,7 +60,7 @@ class NovoItemDesejadoViewController: UIViewController {
           let itemCadastrado = UIAlertAction(title: "OK", style: .Default) { (action) in
             self.textViewTags.resignFirstResponder()
             self.textFieldNome.resignFirstResponder()
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
           }
           showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_item_adicionado", comment: ""), viewController: self, action: itemCadastrado)
         } else {

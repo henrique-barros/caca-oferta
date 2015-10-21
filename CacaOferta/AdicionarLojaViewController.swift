@@ -43,7 +43,7 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
         break
     }
   }
-  @IBAction func onButtonTouchUpInsideNavigationBar(sender: UIButton) {
+  @IBAction func onButtonTouchUpInsideNavigationBar(sender: UIBarButtonItem) {
     switch (sender.tag) {
       case tagButtonAdd:
         adicionarLojaComDadosDaTela()
@@ -62,7 +62,7 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
           let lojaCadastrada = UIAlertAction(title: "OK", style: .Default) { (action) in
             self.textFieldNome.resignFirstResponder()
             self.textFieldEndereco.resignFirstResponder()
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
           }
           showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_loja_adicionada", comment: ""), viewController: self, action: lojaCadastrada)
         } else {
@@ -72,7 +72,6 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
       }
     }
     else {
-      //TODO MENSAGEM DE ERRO
       print("Falta informação")
       showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_loja", comment: ""), viewController: self)
     }

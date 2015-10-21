@@ -22,7 +22,7 @@ class AdicionarProdutosViewController: UIViewController {
   @IBOutlet weak var textFieldDescricao: UITextField!
   @IBOutlet weak var textFieldMarca: UITextField!
   @IBOutlet weak var textFieldValor: UITextField!
-  @IBOutlet weak var textViewTags: UITextView!
+  @IBOutlet weak var textViewTags: UITextField!
 
   
   override func viewDidLoad() {
@@ -50,7 +50,7 @@ class AdicionarProdutosViewController: UIViewController {
     if textFieldDescricao.text!.isEmpty || textFieldMarca.text!.isEmpty || textFieldValor.text!.isEmpty {
       showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_produto", comment: ""), viewController: self)
     } else {
-      let tags: [String] = textViewTags.text.componentsSeparatedByString(",")
+      let tags: [String] = textViewTags.text!.componentsSeparatedByString(",")
       let scanner = NSScanner(string: textFieldValor.text!)
       var preco: Double = Double()
       scanner.scanDouble(&preco)
