@@ -9,14 +9,23 @@
 import UIKit
 import MapKit
 
+let tagTextFieldNome = 11
+let tagTextFieldLocal = 12
 let tagButtonMeuLocal = 13
 let tagButtonBuscar = 14
 let tagButtonAdd = 15
 
-class AdicionarLojaViewController: UITableViewController, CLLocationManagerDelegate {
+class AdicionarLojaViewController: UITableViewController, CLLocationManagerDelegate, UITextFieldDelegate {
   @IBOutlet weak var textFieldNome: UITextField!
   @IBOutlet weak var textFieldEndereco: UITextField!
   @IBOutlet weak var mapView: MKMapView!
+  
+  @IBOutlet weak var labelLocal: UILabel!
+  @IBOutlet weak var labelNome: UILabel!
+  
+  @IBOutlet weak var botaoMeuLocal: UIButton!
+  
+  @IBOutlet weak var botaoBuscar: UIButton!
   
   let locationManager = CLLocationManager()
   var currentLocation = CLLocation()
@@ -27,9 +36,24 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
     locationManager.requestAlwaysAuthorization()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.startUpdatingLocation()
+    textFieldNome.delegate = self
+    textFieldEndereco.delegate = self
+    atualizarTextos()
   }
-  
-  
+  func atualizarTextos() {
+    botaoMeuLocal.setTitle(NSLocalizedString("botao_meu_local", comment: ""), forState: UIControlState.Normal)
+    
+    botaoBuscar.setTitle(NSLocalizedString("botao_buscar", comment: ""), forState: UIControlState.Normal)
+    
+    labelNome.text = NSLocalizedString("label_nome", comment: "")
+    
+    labelLocal.text = NSLocalizedString("label_local", comment: "")
+    
+    textFieldNome.placeholder = NSLocalizedString("placeholder_nome", comment: "")
+    textFieldEndereco.placeholder = NSLocalizedString("placeholder_endereco", comment: "")
+    
+    navigationItem.title = NSLocalizedString("title_adicionar_loja", comment: "")
+  }
 
   @IBAction func onButtonTouchUpInside(sender: UIButton) {
     switch(sender.tag) {
@@ -120,5 +144,17 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
   }
   func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
     mapView.showsUserLocation = (status == .AuthorizedAlways)
+  }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    switch textField.tag {
+    case tagTextFieldNome:
+      textFieldNome.resignFirstResponder()
+    case tagTextFieldLocal:
+      textFieldEndereco.resignFirstResponder()
+    default:
+      break
+    }
+    return true
   }
 }

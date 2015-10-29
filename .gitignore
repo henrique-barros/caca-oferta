@@ -16,5 +16,6 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+aps_development.cer
 # Pods - for those of you who use CocoaPods
 Pods

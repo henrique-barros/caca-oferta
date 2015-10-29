@@ -12,28 +12,56 @@ let tagTextFieldMarca = 12
 let tagTextFieldPreco = 13
 let tagTextViewTags = 14
 let tagButtonAdicionar = 15
+let tagLabelDescricao = 16
+let tagLabelMarca = 17
+let tagLabelValor = 18
+let tagLabelTagsProduto = 19
 
 import UIKit
 
-class AdicionarProdutosViewController: UIViewController {
+class AdicionarProdutosViewController: UIViewController, UITextFieldDelegate {
   
   var loja: PFObject = PFObject(className: lojaKeyClassLoja)
   
   @IBOutlet weak var textFieldDescricao: UITextField!
-  @IBOutlet weak var textFieldMarca: UITextField!
   @IBOutlet weak var textFieldValor: UITextField!
+  @IBOutlet weak var textFieldMarca: UITextField!
   @IBOutlet weak var textViewTags: UITextField!
 
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+    textFieldDescricao.becomeFirstResponder()
+    textFieldMarca.delegate = self
+    textFieldValor.delegate = self
+    textViewTags.delegate = self
+    textFieldDescricao.delegate = self
+    atualizarTextos()
   }
+  
+  func atualizarTextos() {
+    let botaoAdicionar = view.viewWithTag(tagButtonAdicionar) as! UIButton
+    botaoAdicionar.setTitle(NSLocalizedString("botao_adicionar", comment: ""), forState: UIControlState.Normal)
+    
+    let labelDescricao = view.viewWithTag(tagLabelDescricao) as! UILabel
+    labelDescricao.text = NSLocalizedString("label_descricao", comment: "")
+    
+    let labelMarca = view.viewWithTag(tagLabelMarca) as! UILabel
+    labelMarca.text = NSLocalizedString("label_marca", comment: "")
+    
+    let labelValor = view.viewWithTag(tagLabelValor) as! UILabel
+    labelValor.text = NSLocalizedString("label_valor", comment: "")
+    
+    let labelTags = view.viewWithTag(tagLabelTagsProduto) as! UILabel
+    labelTags.text = NSLocalizedString("label_tags", comment: "")
+    
+    navigationItem.title = NSLocalizedString("title_adicionar_produtos", comment: "")
+  }
+
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   @IBAction func onButtonTouchUpInside(sender: UIButton) {
@@ -81,14 +109,20 @@ class AdicionarProdutosViewController: UIViewController {
     loja.saveInBackground()
   }
   
-  /*
-  // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    switch textField.tag {
+    case tagTextFieldDescricao:
+      textFieldMarca.becomeFirstResponder()
+    case tagTextFieldMarca:
+      textFieldValor.becomeFirstResponder()
+    case tagTextFieldPreco:
+      textViewTags.becomeFirstResponder()
+    case tagTextViewTags:
+      textViewTags.resignFirstResponder()
+      self.adicionaProdutoComDadosDaTela()
+    default:
+      break
+    }
+    return true
   }
-  */
-  
 }

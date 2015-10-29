@@ -10,6 +10,7 @@
 "erro" = "Erro";
 "atencao" = "Atenção";
 "ok" = "Ok";
+"cancel" = "Cancelar";
 
 
 // MapaProdutoController
@@ -22,21 +23,62 @@
 "msg_erro_informacoes_loja" = "Faltam informações obrigatórias a serem preenchidas para o cadastro da loja.";
 "msg_erro_busca_minha_localizacao" = "Não foi possível encontrar sua localização, verifique se o GPS está ativado.";
 "msg_erro_busca_endereco" = "Não foi possível encontrar a localização do endereço entrado. Verifique se foi digitado corretamente.";
+"title_adicionar_loja" = "Adicionar Loja";
+"label_nome" = "Nome:";
+"label_local" = "Local:";
+"placeholder_nome" = "Nome";
+"placeholder_endereco"= "Endereço";
+"botao_meu_local" = "Meu Local";
+"botao_buscar" = "Buscar";
 
 //CadastrarUsuarioTableViewController
 "msg_ok_usuario_cadastrado" = "Usuário cadastrado com sucesso.";
 "msg_erro_cadastro_usuario" = "Ocorreu um erro no cadastro do usuário.";
 "msg_erro_informacoes_usuario" = "Faltam informações obrigatórias a serem preenchidas para o cadastro do usuário.";
+"label_email" = "Email:";
+"botao_voltar" = "Voltar";
+"botao_cadastrar" = "Cadastrar";
 
 //LoginViewController
 "msg_erro_login" = "Erro ao realizar login. Confira os dados ou sua conexão com a rede.";
+"label_login" = "Login:";
+"label_senha" = "Senha:";
+"botao_cadastrar" = "Cadastrar";
+"botao_entrar" = "Entrar";
 
 //AdicionarProdutosViewController
 "msg_erro_informacoes_produto" = "Faltam informações obrigatórias a serem preenchidas para o cadastro do produto.";
 "msg_produto_adicionado" = "Produto cadastrado com sucesso.";
 "msg_erro_cadastro_produto" = "Ocorreu um erro no cadastro do produto.";
+"label_descricao" = "Descrição:";
+"label_marca" = "Marca:";
+"label_valor" = "Valor:";
+"title_adicionar_produtos" = "Adicionar Produto";
 
 //NovoItemDesejadoViewController
 "msg_erro_informacoes_item_desejado" = "Faltam informações obrigatórias a serem preenchidas para o cadastro de item desejado.";
 "msg_item_adicionado" = "Item cadastrado com sucesso.";
 "msg_erro_cadastro_item" = "Ocorreu um erro no cadastro do item.";
+"title_novo_item" = "Novo Item";
+"label_item" = "Item:";
+"label_tags" = "Tags:";
+"botao_adicionar" = "Adicionar";
+
+//ListaLojasTableViewController
+"msg_alerta_deletar_loja" = "Deseja mesmo remover a loja selecionada?";
+"title_lojas" = "Lojas";
+
+//DetalhesLojaTableViewController
+"msg_alerta_deletar_produto" = "Deseja mesmo remover o produto selecionado?";
+"title_detalhes_loja" = "Produtos";
+
+//Logout
+"msg_alerta_logout" = "Deseja mesmo sair?";
+
+//Tab bar
+"title_lista_compras" = "Lista Compras";
+"title_lojas" = "Lojas";
+
+//Titulo
+"nome_app" = "Caça Oferta";
+

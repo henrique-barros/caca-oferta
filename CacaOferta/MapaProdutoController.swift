@@ -13,7 +13,7 @@ import MapKit
 class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
   
   @IBOutlet weak var mapView: MKMapView!
-  var lojas = [Loja]()
+  var lojas = [PFObject]()
   let locationManager = CLLocationManager()
   
   override func viewDidLoad() {
@@ -21,6 +21,24 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
     locationManager.delegate = self
     locationManager.requestAlwaysAuthorization()
     locationManager.startUpdatingLocation()
+    
+    carregaDetalhes()
+  }
+  
+  func mostrarLojasProximas() {
+    for loja in lojas {
+      let latitude = loja.objectForKey(lojaKeyGeoPoint)?.latitude
+      let longitude = loja.objectForKey(lojaKeyGeoPoint)?.longitude
+      let nome = loja.objectForKey(lojaKeyNome) as! String
+      let descricao = loja.objectForKey(lojaKeyDescricao) as! String
+      let pin = MapPin(coordinate: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!), title: nome, subtitle: descricao)
+      mapView.addAnnotation(pin)
+    }
+  }
+  
+  func carregaDetalhes() {
+    let detalhes = self.storyboard?.instantiateViewControllerWithIdentifier(detalhesLocalID)
+    self.navigationController?.showViewController(detalhes!, sender: self)
   }
   
   func regiaoDaLoja(loja: Loja) -> CLCircularRegion {

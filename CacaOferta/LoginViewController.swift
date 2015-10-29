@@ -16,6 +16,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   let tagBotaoCadastrar = 10
   let tagTextFieldLogin = 12
   let tagTextFieldSenha = 13
+  let tagLabelLogin = 14
+  let tagLabelSenha = 15
   let menuID = "menu"
   let cadastrarID = "cadastrar"
   
@@ -23,9 +25,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var textFieldSenha: UITextField!
   
   override func viewDidLoad() {
+    atualizarTextos()
     textFieldLogin.delegate = self
     textFieldSenha.delegate = self
     textFieldLogin.becomeFirstResponder()
+  }
+  
+  func atualizarTextos() {
+    let botaoCadastrar = view.viewWithTag(tagBotaoCadastrar) as! UIButton
+    botaoCadastrar.setTitle(NSLocalizedString("botao_cadastrar", comment: ""), forState: UIControlState.Normal)
+    
+    let botaoEntrar = view.viewWithTag(tagBotaoEntrar) as! UIButton
+    botaoEntrar.setTitle(NSLocalizedString("botao_entrar", comment: ""), forState: UIControlState.Normal)
+    
+    let labelLogin = view.viewWithTag(tagLabelLogin) as! UILabel
+    labelLogin.text = NSLocalizedString("label_login", comment: "")
+    
+    let labelSenha = view.viewWithTag(tagLabelSenha) as! UILabel
+    labelSenha.text = NSLocalizedString("label_senha", comment: "")
   }
   
   @IBAction func onButtonTouchUpInside(sender: UIButton) {

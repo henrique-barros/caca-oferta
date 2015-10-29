@@ -8,18 +8,35 @@
 
 import UIKit
 
+let tagNome = 11
+let tagTags = 12
+let tagLabelNome = 13
+let tagLabelTags = 14
+let tagBotaoAdicionar = 15
 
-
-class NovoItemDesejadoViewController: UIViewController {
+class NovoItemDesejadoViewController: UIViewController, UITextFieldDelegate {
   
   @IBOutlet weak var textFieldNome: UITextField!
-  @IBOutlet weak var textViewTags: UITextView!
+  @IBOutlet weak var textViewTags: UITextField!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    textFieldNome.becomeFirstResponder()
+    textFieldNome.delegate = self
+    textViewTags.delegate = self
     // Do any additional setup after loading the view.
+  }
+  
+  func atualizarTextos() {
+    let botaoAdicionar = view.viewWithTag(tagBotaoAdicionar) as! UIButton
+    botaoAdicionar.setTitle(NSLocalizedString("botao_adicionar", comment: ""), forState: UIControlState.Normal)
+    
+    let labelNome = view.viewWithTag(tagLabelNome) as! UILabel
+    labelNome.text = NSLocalizedString("label_item", comment: "")
+    
+    let labelTags = view.viewWithTag(tagLabelTags) as! UILabel
+    labelTags.text = NSLocalizedString("label_tags", comment: "")
   }
   
   override func didReceiveMemoryWarning() {
@@ -49,7 +66,7 @@ class NovoItemDesejadoViewController: UIViewController {
           
       let itemDesejado = NSMutableDictionary()
       itemDesejado.setObject(textFieldNome.text!, forKey: usuarioKeyItemDesejadoDescricao)
-      itemDesejado.setObject(textViewTags.text, forKey: usuarioKeyItemDesejadoTags)
+      itemDesejado.setObject(textViewTags.text!, forKey: usuarioKeyItemDesejadoTags)
       
       listaProdutos?.addObject(itemDesejado)
       
@@ -71,5 +88,17 @@ class NovoItemDesejadoViewController: UIViewController {
     
   }
   
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    switch textField.tag {
+    case tagNome:
+      textViewTags.becomeFirstResponder()
+    case tagTags:
+      textViewTags.resignFirstResponder()
+      adicionarProduto()
+    default:
+      break
+    }
+    return true
+  }
   
 }

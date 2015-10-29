@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B701F3F41BDC1FB200259614 /* logout-24blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B701F3F21BDC1FB200259614 /* logout-24blue.png */; settings = {ASSET_TAGS = (); }; };
+		B701F3F51BDC1FB200259614 /* logout-24.png in Resources */ = {isa = PBXBuildFile; fileRef = B701F3F31BDC1FB200259614 /* logout-24.png */; settings = {ASSET_TAGS = (); }; };
+		B701F3F71BDC21B800259614 /* BotaoLogout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701F3F61BDC21B800259614 /* BotaoLogout.swift */; settings = {ASSET_TAGS = (); }; };
 		B7253C461B8E619300795D5A /* BotaoAdicionar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7253C451B8E619300795D5A /* BotaoAdicionar.swift */; };
 		B7253C4A1B8E6BC600795D5A /* DetalhesLojaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7253C491B8E6BC600795D5A /* DetalhesLojaTableViewController.swift */; };
 		B73573421B5ABEDE00AE36FA /* ListaComprasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73573411B5ABEDE00AE36FA /* ListaComprasTVC.swift */; };
@@ -14,6 +17,7 @@
 		B737FAAF1B5D92F80034232D /* Loja.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737FAAE1B5D92F80034232D /* Loja.swift */; };
 		B737FAB11B5DA4130034232D /* GeralUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737FAB01B5DA4130034232D /* GeralUtils.swift */; };
 		B737FAB31B5DA70E0034232D /* AdicionarLojaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737FAB21B5DA70E0034232D /* AdicionarLojaViewController.swift */; };
+		B73E425D1BDAB1CE00E4AC36 /* DetalhesLocalizacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73E425C1BDAB1CE00E4AC36 /* DetalhesLocalizacaoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B73EB8421BA77334008CBD8C /* AdicionarProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73EB8411BA77334008CBD8C /* AdicionarProdutosViewController.swift */; };
 		B73EB8441BA77D87008CBD8C /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73EB8431BA77D87008CBD8C /* Produto.swift */; };
 		B752FAAC1B6D3A34008FFD66 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B752FAAB1B6D3A34008FFD66 /* LoginViewController.swift */; };
@@ -66,6 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B701F3F21BDC1FB200259614 /* logout-24blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logout-24blue.png"; path = "../../../Users/henriquebarros/Downloads/logout-24blue.png"; sourceTree = "<group>"; };
+		B701F3F31BDC1FB200259614 /* logout-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logout-24.png"; path = "../../../Users/henriquebarros/Downloads/logout-24.png"; sourceTree = "<group>"; };
+		B701F3F61BDC21B800259614 /* BotaoLogout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotaoLogout.swift; sourceTree = "<group>"; };
 		B7253C451B8E619300795D5A /* BotaoAdicionar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotaoAdicionar.swift; sourceTree = "<group>"; };
 		B7253C491B8E6BC600795D5A /* DetalhesLojaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesLojaTableViewController.swift; sourceTree = "<group>"; };
 		B73573411B5ABEDE00AE36FA /* ListaComprasTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaComprasTVC.swift; sourceTree = "<group>"; };
@@ -73,6 +80,7 @@
 		B737FAAE1B5D92F80034232D /* Loja.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loja.swift; sourceTree = "<group>"; };
 		B737FAB01B5DA4130034232D /* GeralUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeralUtils.swift; sourceTree = "<group>"; };
 		B737FAB21B5DA70E0034232D /* AdicionarLojaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionarLojaViewController.swift; sourceTree = "<group>"; };
+		B73E425C1BDAB1CE00E4AC36 /* DetalhesLocalizacaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesLocalizacaoViewController.swift; sourceTree = "<group>"; };
 		B73EB8411BA77334008CBD8C /* AdicionarProdutosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionarProdutosViewController.swift; sourceTree = "<group>"; };
 		B73EB8431BA77D87008CBD8C /* Produto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 		B752FAAB1B6D3A34008FFD66 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 			children = (
 				B73573401B5ABE2800AE36FA /* Image */,
 				B7253C451B8E619300795D5A /* BotaoAdicionar.swift */,
+				B701F3F61BDC21B800259614 /* BotaoLogout.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -165,6 +174,8 @@
 		B73573401B5ABE2800AE36FA /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B701F3F21BDC1FB200259614 /* logout-24blue.png */,
+				B701F3F31BDC1FB200259614 /* logout-24.png */,
 				B7A51D711B35BBDD00FBB5EB /* circle-16(1).png */,
 				B768935D1B5AD30D007E6580 /* minus-2-24.png */,
 				B768935F1B5AD37C007E6580 /* minus-2-24(1).png */,
@@ -284,6 +295,7 @@
 		B7F301E31B88BCDC002DBCB6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B73E425C1BDAB1CE00E4AC36 /* DetalhesLocalizacaoViewController.swift */,
 				B77D39401B64012000406C2E /* MapaProdutoController.swift */,
 				B737FAB21B5DA70E0034232D /* AdicionarLojaViewController.swift */,
 				B73573431B5AC15300AE36FA /* MainViewController.swift */,
@@ -397,8 +409,10 @@
 				B76893601B5AD37C007E6580 /* minus-2-24(1).png in Resources */,
 				B7B39FF41BD12AA500F014E6 /* Localizable.strings in Resources */,
 				B7F551B71B35C22300000697 /* plus-2-24.png in Resources */,
+				B701F3F51BDC1FB200259614 /* logout-24.png in Resources */,
 				B7AB4BE91B359D4E00F3FB0C /* Images.xcassets in Resources */,
 				B768935E1B5AD30D007E6580 /* minus-2-24.png in Resources */,
+				B701F3F41BDC1FB200259614 /* logout-24blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,8 +432,10 @@
 			files = (
 				B752FAAF1B6D5AC8008FFD66 /* CadastrarUsuarioTableViewController.swift in Sources */,
 				B7AB4C041B35A6D100F3FB0C /* MapPin.swift in Sources */,
+				B73E425D1BDAB1CE00E4AC36 /* DetalhesLocalizacaoViewController.swift in Sources */,
 				B737FAB31B5DA70E0034232D /* AdicionarLojaViewController.swift in Sources */,
 				B737FAAF1B5D92F80034232D /* Loja.swift in Sources */,
+				B701F3F71BDC21B800259614 /* BotaoLogout.swift in Sources */,
 				B7AB4BE21B359D4E00F3FB0C /* AppDelegate.swift in Sources */,
 				B7253C4A1B8E6BC600795D5A /* DetalhesLojaTableViewController.swift in Sources */,
 				B737FAB11B5DA4130034232D /* GeralUtils.swift in Sources */,

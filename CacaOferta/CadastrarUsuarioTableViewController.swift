@@ -17,6 +17,12 @@ class CadastrarUsuarioTableViewController: UIViewController, UITextFieldDelegate
   let tagTextFieldEmail = 11
   let tagTextFieldLoginCadastro = 12
   let tagTextFieldSenhaCadastro = 13
+  let tagLabelCadastrar = 14
+  let tagLabelEmail = 15
+  let tagLabelLogin = 16
+  let tagLabelSenha = 17
+  let tagBotaoVoltar = 18
+  let tagBotaoCadastrar = 19
 
   @IBOutlet weak var textFieldEmail: UITextField!
   
@@ -30,7 +36,28 @@ class CadastrarUsuarioTableViewController: UIViewController, UITextFieldDelegate
     textFieldLogin.delegate = self
     textFieldSenha.delegate = self
     textFieldEmail.delegate = self
-    textFieldLogin.becomeFirstResponder()
+    textFieldEmail.becomeFirstResponder()
+    atualizarTextos()
+  }
+  
+  func atualizarTextos() {
+    let botaoVoltar = view.viewWithTag(tagBotaoVoltar) as! UIButton
+    botaoVoltar.setTitle(NSLocalizedString("botao_voltar", comment: ""), forState: UIControlState.Normal)
+    
+    let botaoCadastrar = view.viewWithTag(tagBotaoCadastrar) as! UIButton
+    botaoCadastrar.setTitle(NSLocalizedString("botao_cadastrar", comment: ""), forState: UIControlState.Normal)
+    
+    let labelCadastrar = view.viewWithTag(tagLabelCadastrar) as! UILabel
+    labelCadastrar.text = NSLocalizedString("botao_cadastrar", comment: "")
+    
+    let labelSenha = view.viewWithTag(tagLabelSenha) as! UILabel
+    labelSenha.text = NSLocalizedString("label_senha", comment: "")
+    
+    let labelLogin = view.viewWithTag(tagLabelLogin) as! UILabel
+    labelLogin.text = NSLocalizedString("label_login", comment: "")
+    
+    let labelEmail = view.viewWithTag(tagLabelEmail) as! UILabel
+    labelEmail.text = NSLocalizedString("label_email", comment: "")
   }
 
   override func didReceiveMemoryWarning() {

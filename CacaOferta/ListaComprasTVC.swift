@@ -25,7 +25,26 @@ class ListaComprasTVC: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    tableView.backgroundColor = UIColor(red: 255/255, green: 240/255, blue: 245/255, alpha: 1)
+    
+    self.tabBarController?.title = NSLocalizedString("nome_app", comment: "")
+    
+    let botaoLogout = UIBarButtonItem(customView: BotaoLogout(frame: CGRectMake(0, 0, 30, 30), target: self, selector: Selector("logout"), image: UIImage(named: "logout-24blue.png")!))
+    self.tabBarController?.navigationItem.setRightBarButtonItem(botaoLogout, animated: false)
+    
+    atualizarTextos()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    print("viewWillAppear")
     fIniciar()
+    self.tableView.reloadData()
+  }
+  
+  
+  func atualizarTextos() {
+    self.tabBarController?.tabBar.items?.last?.title = NSLocalizedString("title_lojas", comment: "")
   }
   
   override func didReceiveMemoryWarning() {
@@ -33,7 +52,12 @@ class ListaComprasTVC: UITableViewController {
   }
   
   func fIniciar() {
+    
     vlsItens = loggedUser.objectForKey(usuarioKeyItensDesejados) as! NSMutableArray
+  }
+  
+  func logout() {
+    doLogout(self)
   }
   
   // MARK: - Table view data source
@@ -50,8 +74,19 @@ class ListaComprasTVC: UITableViewController {
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell: UITableViewCell = (tableView.dequeueReusableCellWithIdentifier(itemCell))!
     
+    if indexPath.row % 2 == 0 {
+      cell.contentView.backgroundColor = UIColor(red: 240/255, green: 250/255, blue: 255/255, alpha: 1)
+    } else {
+      cell.contentView.backgroundColor = UIColor(red: 255/255, green: 240/255, blue: 245/255, alpha: 1)
+    }
+    
     let voLabel = cell.viewWithTag(tagItem) as? UILabel
     voLabel?.text = vlsItens.objectAtIndex(indexPath.row).objectForKey(usuarioKeyItemDesejadoDescricao) as? String
+    
+    let vbDeleteButton = cell.viewWithTag(tagDeleteButton) as? UIButton
+    vbDeleteButton?.accessibilityValue = "\(indexPath.row)"
+    vbDeleteButton?.addTarget(self, action: Selector("removerItem:"), forControlEvents: UIControlEvents.TouchUpInside)
+    
     return cell
   }
   
@@ -87,4 +122,10 @@ class ListaComprasTVC: UITableViewController {
     self.navigationController?.showViewController(novoItemViewController!, sender: self)
   }
   
+  func removerItem(sender: UIButton) {
+    vlsItens.removeObjectAtIndex(Int(sender.accessibilityValue!)!)
+    loggedUser.setObject(vlsItens, forKey: usuarioKeyItensDesejados)
+    loggedUser.saveInBackground()
+    self.tableView.reloadData()
+  }
 }

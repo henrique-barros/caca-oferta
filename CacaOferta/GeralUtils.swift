@@ -40,3 +40,20 @@ func showSimpleAlertWithAction(title: String!, message:String, viewController: U
   alert.addAction(action)
   viewController.presentViewController(alert, animated: true, completion: nil)
 }
+
+func showSimpleAlertWithConfirmAction(title: String!, message:String, viewController: UIViewController, action: UIAlertAction) {
+  let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+  let actionCancel = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .Cancel, handler: nil)
+  alert.addAction(actionCancel)
+  alert.addAction(action)
+  viewController.presentViewController(alert, animated: true, completion: nil)
+}
+
+func doLogout(viewController: UIViewController) {
+  let action  = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default) { (act) in
+    PFUser.logOut()
+    loggedUser = PFUser()
+    viewController.tabBarController?.dismissViewControllerAnimated(false, completion: nil)
+  }
+  showSimpleAlertWithConfirmAction(NSLocalizedString("atencao", comment: ""), message: NSLocalizedString("msg_alerta_logout", comment: ""), viewController: viewController, action: action)
+}
