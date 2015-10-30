@@ -8,6 +8,8 @@
 
 let keyLatitude = "latitude"
 let keyLongitude = "longitude"
+let keyLojasRelevantes = "lojasRelevantes"
+let keyProdutosRelevantes = "produtosRelevantes"
 
 import UIKit
 import CoreLocation
@@ -66,8 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
       application.registerUserNotificationSettings(settings)
       application.registerForRemoteNotifications()
     } else {
-      let types: UIRemoteNotificationType = [UIRemoteNotificationType.Badge, UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound]
-      application.registerForRemoteNotificationTypes(types)
+      application.registerForRemoteNotifications()
     }
     
     
@@ -139,7 +140,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
   
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
     PFPush.handlePush(userInfo)
-    print("didReceiveRemoteNotification")
+    var json: AnyObject = ""
+    do {
+      let data = try NSJSONSerialization.dataWithJSONObject(userInfo, options: NSJSONWritingOptions.PrettyPrinted)
+      
+      json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+      
+      if (json.objectForKey(keyLojasRelevantes)?.firstObject != nil) {
+        lojasRelevantes = json.objectForKey(keyLojasRelevantes) as! NSMutableArray
+        produtosRelevantes = json.objectForKey(keyProdutosRelevantes) as! NSMutableArray
+      }
+    } catch {
+        
+    }
+        
     if application.applicationState == UIApplicationState.Inactive {
       PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
     }

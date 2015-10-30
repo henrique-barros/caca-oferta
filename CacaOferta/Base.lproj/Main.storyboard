@@ -20,11 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pyg-s2-ize">
-                                <rect key="frame" x="0.0" y="64" width="320" height="500"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pyg-s2-ize">
+                                <rect key="frame" x="0.0" y="64" width="320" height="560"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pyg-s2-ize" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="3UA-Ox-06D"/>
+                            <constraint firstItem="Pyg-s2-ize" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="du7-qv-zho"/>
+                            <constraint firstItem="Pyg-s2-ize" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dwR-PE-Gch"/>
+                            <constraint firstItem="Pyg-s2-ize" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wzR-Wu-jpC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Camisetas" id="g4z-zm-dkZ"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

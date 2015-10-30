@@ -71,6 +71,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   func iniciarAplicacao(user: NSObject) {
     if let _ = user as? PFUser {
       loggedUser = user as! PFUser
+      PFInstallation.currentInstallation().setObject(loggedUser.username!, forKey: "user")
+      PFInstallation.currentInstallation().saveEventually()
       print(loggedUser.username!)
       let viewController: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier(menuID) as! UITabBarController
       let navController: UINavigationController = UINavigationController(rootViewController: viewController)

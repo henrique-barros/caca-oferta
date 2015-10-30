@@ -99,6 +99,7 @@ class ListaComprasTVC: UITableViewController {
     let mapaProduto: MapaProdutoController = self.storyboard!
       .instantiateViewControllerWithIdentifier(mapaProdutoController) as!
     MapaProdutoController
+    mapaProduto.item = vlsItens.objectAtIndex(indexPath.row) as! NSMutableDictionary
     navigationController!.pushViewController(mapaProduto, animated: true)
   }
   

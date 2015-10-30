@@ -531,7 +531,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b03e4cc3-f306-4309-9f67-c887c047263a";
+				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,7 +572,7 @@
 				INFOPLIST_FILE = /Developer/CompreFacil/CacaOfertaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b03e4cc3-f306-4309-9f67-c887c047263a";
+				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -595,7 +595,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CacaOferta;
-				PROVISIONING_PROFILE = "b03e4cc3-f306-4309-9f67-c887c047263a";
+				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
 				SWIFT_OBJC_BRIDGING_HEADER = "CacaOferta-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -617,7 +617,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CacaOferta;
-				PROVISIONING_PROFILE = "b03e4cc3-f306-4309-9f67-c887c047263a";
+				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
 				SWIFT_OBJC_BRIDGING_HEADER = "CacaOferta-Bridging-Header.h";
 			};
 			name = Release;

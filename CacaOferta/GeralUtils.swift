@@ -12,6 +12,8 @@ import MapKit
 
 var bla = "string1"
 var loggedUser: PFUser = PFUser()
+var lojasRelevantes: NSMutableArray = NSMutableArray()
+var produtosRelevantes: NSMutableArray = NSMutableArray()
 
 
 var usuarioKeyItensDesejados = "itemDesejado"
