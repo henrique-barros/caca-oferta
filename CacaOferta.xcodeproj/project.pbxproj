@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B701F3F41BDC1FB200259614 /* logout-24blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B701F3F21BDC1FB200259614 /* logout-24blue.png */; settings = {ASSET_TAGS = (); }; };
-		B701F3F51BDC1FB200259614 /* logout-24.png in Resources */ = {isa = PBXBuildFile; fileRef = B701F3F31BDC1FB200259614 /* logout-24.png */; settings = {ASSET_TAGS = (); }; };
 		B701F3F71BDC21B800259614 /* BotaoLogout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701F3F61BDC21B800259614 /* BotaoLogout.swift */; settings = {ASSET_TAGS = (); }; };
 		B7253C461B8E619300795D5A /* BotaoAdicionar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7253C451B8E619300795D5A /* BotaoAdicionar.swift */; };
 		B7253C4A1B8E6BC600795D5A /* DetalhesLojaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7253C491B8E6BC600795D5A /* DetalhesLojaTableViewController.swift */; };
@@ -44,6 +42,8 @@
 		B77D394D1B6405D400406C2E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B77D394C1B6405D400406C2E /* libsqlite3.dylib */; };
 		B77D394F1B6405DD00406C2E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77D394E1B6405DD00406C2E /* Accounts.framework */; };
 		B77D39511B6405E600406C2E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77D39501B6405E600406C2E /* Social.framework */; };
+		B7A456C41BE822570017B52D /* plus-2-24.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A456C31BE822570017B52D /* plus-2-24.png */; settings = {ASSET_TAGS = (); }; };
+		B7A456C81BE822A90017B52D /* logout-24.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A456C71BE822A90017B52D /* logout-24.png */; settings = {ASSET_TAGS = (); }; };
 		B7A51D721B35BBDD00FBB5EB /* circle-16(1).png in Resources */ = {isa = PBXBuildFile; fileRef = B7A51D711B35BBDD00FBB5EB /* circle-16(1).png */; };
 		B7AB4BE21B359D4E00F3FB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4BE11B359D4E00F3FB0C /* AppDelegate.swift */; };
 		B7AB4BE71B359D4E00F3FB0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AB4BE51B359D4E00F3FB0C /* Main.storyboard */; };
@@ -56,7 +56,6 @@
 		B7C652441BBF099B001BD5A9 /* NovoItemDesejadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C652431BBF099B001BD5A9 /* NovoItemDesejadoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B7F301E51B88BE4E002DBCB6 /* ListaLojasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F301E41B88BE4E002DBCB6 /* ListaLojasTableViewController.swift */; };
 		B7F551B51B35C1F200000697 /* plus-2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F551B41B35C1F200000697 /* plus-2-48.png */; };
-		B7F551B71B35C22300000697 /* plus-2-24.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F551B61B35C22300000697 /* plus-2-24.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B701F3F21BDC1FB200259614 /* logout-24blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logout-24blue.png"; path = "../../../Users/henriquebarros/Downloads/logout-24blue.png"; sourceTree = "<group>"; };
-		B701F3F31BDC1FB200259614 /* logout-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logout-24.png"; path = "../../../Users/henriquebarros/Downloads/logout-24.png"; sourceTree = "<group>"; };
 		B701F3F61BDC21B800259614 /* BotaoLogout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotaoLogout.swift; sourceTree = "<group>"; };
 		B7253C451B8E619300795D5A /* BotaoAdicionar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotaoAdicionar.swift; sourceTree = "<group>"; };
 		B7253C491B8E6BC600795D5A /* DetalhesLojaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesLojaTableViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +105,8 @@
 		B77D394E1B6405DD00406C2E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		B77D39501B6405E600406C2E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B77D39521B64077F00406C2E /* CacaOferta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CacaOferta-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		B7A456C31BE822570017B52D /* plus-2-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-2-24.png"; sourceTree = "<group>"; };
+		B7A456C71BE822A90017B52D /* logout-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-24.png"; sourceTree = "<group>"; };
 		B7A51D711B35BBDD00FBB5EB /* circle-16(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-16(1).png"; sourceTree = "<group>"; };
 		B7AB4BDC1B359D4E00F3FB0C /* CacaOferta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CacaOferta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AB4BE01B359D4E00F3FB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,7 +123,6 @@
 		B7C652431BBF099B001BD5A9 /* NovoItemDesejadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovoItemDesejadoViewController.swift; sourceTree = "<group>"; };
 		B7F301E41B88BE4E002DBCB6 /* ListaLojasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaLojasTableViewController.swift; sourceTree = "<group>"; };
 		B7F551B41B35C1F200000697 /* plus-2-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-2-48.png"; sourceTree = "<group>"; };
-		B7F551B61B35C22300000697 /* plus-2-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-2-24.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,15 +172,14 @@
 		B73573401B5ABE2800AE36FA /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				B701F3F21BDC1FB200259614 /* logout-24blue.png */,
-				B701F3F31BDC1FB200259614 /* logout-24.png */,
+				B7A456C31BE822570017B52D /* plus-2-24.png */,
+				B7A456C71BE822A90017B52D /* logout-24.png */,
 				B7A51D711B35BBDD00FBB5EB /* circle-16(1).png */,
 				B768935D1B5AD30D007E6580 /* minus-2-24.png */,
 				B768935F1B5AD37C007E6580 /* minus-2-24(1).png */,
 				B7F551B41B35C1F200000697 /* plus-2-48.png */,
 				B75558A71B35BA3B00FF554C /* circle-16.png */,
 				B75558A51B35B05500FF554C /* circle-24.png */,
-				B7F551B61B35C22300000697 /* plus-2-24.png */,
 				B75558A31B35A8D800FF554C /* pin-7-24.png */,
 			);
 			name = Image;
@@ -398,21 +395,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A456C81BE822A90017B52D /* logout-24.png in Resources */,
 				B7AB4BE71B359D4E00F3FB0C /* Main.storyboard in Resources */,
 				B75558A41B35A8D800FF554C /* pin-7-24.png in Resources */,
 				B75558A61B35B05500FF554C /* circle-24.png in Resources */,
 				B768935C1B5ACEDD007E6580 /* Default-568h@2x.png in Resources */,
 				B7AB4BEC1B359D4E00F3FB0C /* LaunchScreen.xib in Resources */,
+				B7A456C41BE822570017B52D /* plus-2-24.png in Resources */,
 				B7F551B51B35C1F200000697 /* plus-2-48.png in Resources */,
 				B7A51D721B35BBDD00FBB5EB /* circle-16(1).png in Resources */,
 				B75558A81B35BA3B00FF554C /* circle-16.png in Resources */,
 				B76893601B5AD37C007E6580 /* minus-2-24(1).png in Resources */,
 				B7B39FF41BD12AA500F014E6 /* Localizable.strings in Resources */,
-				B7F551B71B35C22300000697 /* plus-2-24.png in Resources */,
-				B701F3F51BDC1FB200259614 /* logout-24.png in Resources */,
 				B7AB4BE91B359D4E00F3FB0C /* Images.xcassets in Resources */,
 				B768935E1B5AD30D007E6580 /* minus-2-24.png in Resources */,
-				B701F3F41BDC1FB200259614 /* logout-24blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +589,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CacaOfertaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Example.CacaOferta;
 				PRODUCT_NAME = CacaOferta;
 				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
 				SWIFT_OBJC_BRIDGING_HEADER = "CacaOferta-Bridging-Header.h";
@@ -615,7 +611,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CacaOfertaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Example.CacaOferta;
 				PRODUCT_NAME = CacaOferta;
 				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
 				SWIFT_OBJC_BRIDGING_HEADER = "CacaOferta-Bridging-Header.h";

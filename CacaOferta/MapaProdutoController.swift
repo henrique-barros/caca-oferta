@@ -16,6 +16,7 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
   var lojas = NSMutableArray()
   var item = NSMutableDictionary()
   let locationManager = CLLocationManager()
+  var produtoRelevanteDoItem = [NSMutableDictionary]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,29 +27,22 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
     mostrarLojasProximas()
   }
   
-  func mostrarLojasProximas() {
-    
+  func getProdutosRelevantesDoItem() -> [NSMutableDictionary] {
     var tagItem = [String]()
     if item.objectForKey(usuarioKeyItemDesejadoTags)!.isKindOfClass(NSArray) {
       tagItem = item.objectForKey(usuarioKeyItemDesejadoTags) as! [String]
-    }
-    else {
+    } else {
       tagItem.append(item.objectForKey(usuarioKeyItemDesejadoTags) as! String)
     }
     tagItem.append(item.objectForKey(usuarioKeyItemDesejadoDescricao)! as! String)
     tagItem = tagItem.map { (string) -> String in string.uppercaseString}
-    print("tagitens")
-    print(tagItem)
     
     var produtoRelevanteDoItem = [NSMutableDictionary]()
     for produto in produtosRelevantes {
       var produtoTags = produto.objectForKey(produtoKeyTags) as! [String]
       produtoTags.append(produto.objectForKey(produtoKeyDescricao) as! String)
       produtoTags = produtoTags.map { (string) -> String in string.uppercaseString}
-      
-      print("produtoTags")
-      print(produtoTags)
-      
+            
       let set1 = Set(tagItem)
       let set2 = Set(produtoTags)
       
@@ -56,15 +50,18 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
         produtoRelevanteDoItem.append(produto as! NSMutableDictionary)
       }
     }
-    print(produtoRelevanteDoItem.description)
-    var produtosObjects = [PFObject]()
+    return produtoRelevanteDoItem
+  }
+  
+  func mostrarLojasProximas() {
+    
+    produtoRelevanteDoItem = getProdutosRelevantesDoItem()
+    
     for produto in produtoRelevanteDoItem {
       let query = PFQuery(className: produtoKeyClass)
       query.whereKey("objectId", equalTo: produto.objectForKey("objectId") as! String)
-      //produtosObjects.append(query.findObjects()!.first! as! PFObject)
       query.findObjectsInBackgroundWithBlock({
         (objects: [AnyObject]?, error: NSError?) in
-        print("aqui")
         let produto = objects?.first as! PFObject
         let relation = produto.objectForKey(produtoKeyLoja) as! PFRelation
         let query2 = relation.query()
@@ -76,51 +73,22 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
           let nome = loja.objectForKey(lojaKeyNome) as! String
           let descricao = loja.objectForKey(lojaKeyDescricao) as! String
           let id = loja.objectForKey(lojaKeyId) as! String
-          let pin = MapPin(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title: nome, subtitle: descricao, id: id)
+          let pin = MapPin(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title: nome.capitalizedString, subtitle: descricao.capitalizedString, id: id)
           self.mapView.addAnnotation(pin)
         })
       })
     }
     
-    print(produtosObjects.description)
-    
-    
-    /*for produto in produtosObjects {
-      print("aqui")
-      let relation = produto.objectForKey(produtoKeyLoja) as! PFRelation
-      let query = relation.query()
-      query?.findObjectsInBackgroundWithBlock({
-          (objects: [AnyObject]?, error: NSError?) in
-          let loja = objects?.first as! PFObject
-          let latitude = (loja.objectForKey(lojaKeyGeoPoint) as! PFGeoPoint).latitude
-          let longitude = (loja.objectForKey(lojaKeyGeoPoint) as! PFGeoPoint).longitude
-          let nome = loja.objectForKey(lojaKeyNome) as! String
-          let descricao = loja.objectForKey(lojaKeyDescricao) as! String
-          let id = loja.objectForKey(lojaKeyId) as! String
-          let pin = MapPin(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title: nome, subtitle: descricao, id: id)
-          self.mapView.addAnnotation(pin)
-      })
-    }*/
-    
-    /*lojas = lojasRelevantes
-    for loja in lojas {
-      let latitude = loja.objectForKey(lojaKeyGeoPoint)?.objectForKey(lojaKeyLatitude)
-      let longitude = loja.objectForKey(lojaKeyGeoPoint)?.objectForKey(lojaKeyLongitude)
-      let nome = loja.objectForKey(lojaKeyNome) as! String
-      let descricao = loja.objectForKey(lojaKeyDescricao) as! String
-      let id = loja.objectForKey(lojaKeyId) as! String
-      let pin = MapPin(coordinate: CLLocationCoordinate2D(latitude: (latitude?.doubleValue!)!, longitude: (longitude?.doubleValue!)!), title: nome, subtitle: descricao, id: id)
-      mapView.addAnnotation(pin)
-    }*/
   }
   
   func carregaDetalhes(idLoja: String) {
     let detalhes = self.storyboard?.instantiateViewControllerWithIdentifier(detalhesLocalID) as! DetalhesLocalizacaoViewController
-    for loja in lojas {
+    for loja in lojasRelevantes {
       if loja.objectForKey(lojaKeyId) as! String == idLoja {
         detalhes.loja = loja as! NSMutableDictionary
       }
     }
+    detalhes.produtos = produtoRelevanteDoItem
     self.navigationController?.showViewController(detalhes, sender: self)
   }
   

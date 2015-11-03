@@ -8,16 +8,25 @@
 
 import UIKit
 
+let tagTextFieldNomeProduto = 11
+let tagTextFieldMarcaProduto = 12
+let tagTextFieldPrecoProduto = 13
+let detalhesLocalizacaoCellID = "detalheLocalizacaoCell"
+
 let detalhesLocalID = "detalhesLocalVC"
 
-class DetalhesLocalizacaoViewController: UIViewController {
+class DetalhesLocalizacaoViewController: UITableViewController {
+  
+  
   
   var loja = NSMutableDictionary()
+  var produtos = [NSMutableDictionary]()
+  var item = NSMutableDictionary()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    print(loja.description)
+    tableView.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 72/255, alpha: 1)
+    carregaInformacoesLoja()
     // Do any additional setup after loading the view.
   }
   
@@ -26,15 +35,37 @@ class DetalhesLocalizacaoViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  
-  /*
-  // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+  func carregaInformacoesLoja() {
+    let nomeLoja = loja.objectForKey(lojaKeyNome) as! String
+    print(nomeLoja.capitalizedString)
+    navigationItem.title = nomeLoja.capitalizedString
+    
   }
-  */
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  {
+    let cell = tableView.dequeueReusableCellWithIdentifier(detalhesLocalizacaoCellID)
+    
+    if indexPath.row % 2 == 0 {
+      cell!.contentView.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 72/255, alpha: 1)
+    } else {
+      cell!.contentView.backgroundColor = UIColor(red: 192/255, green: 170/255, blue: 82/255, alpha: 1)
+    }
+    
+    let textFieldNome = cell?.viewWithTag(tagTextFieldNomeProduto) as! UITextField
+    textFieldNome.text = (produtos[indexPath.row].objectForKey(produtoKeyDescricao) as? String)?.capitalizedString
+    
+    let textFieldMarca = cell?.viewWithTag(tagTextFieldMarcaProduto) as! UITextField
+    textFieldMarca.text = (produtos[indexPath.row].objectForKey(produtoKeyMarca) as? String)?.capitalizedString
+    
+    let textFieldPreco = cell?.viewWithTag(tagTextFieldPrecoProduto) as! UITextField
+    textFieldPreco.text = NSLocalizedString("label_dinheiro", comment: "") + String((produtos[indexPath.row] .objectForKey(produtoKeyPreco) as! Double)).capitalizedString
+    
+    return cell!    
+  }
+  
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return produtos.count
+  }
   
 }

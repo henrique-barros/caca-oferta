@@ -96,7 +96,13 @@ class CadastrarUsuarioTableViewController: UIViewController, UITextFieldDelegate
         } else if let error = error {
           //Something bad has occurred
           print("Error: \(error) \(error.userInfo)")
-          showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_cadastro_usuario", comment: ""), viewController: self)
+          if error.code == 202 {
+            showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_usuario_cadastrado", comment: ""), viewController: self)
+          } else if error.code == 203 {
+            showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_email_cadastrado", comment: ""), viewController: self)
+          } else {
+            showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_cadastro_usuario", comment: ""), viewController: self)
+          }
         }
       }
     } else {

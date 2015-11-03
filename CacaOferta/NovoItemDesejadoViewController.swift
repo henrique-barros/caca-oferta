@@ -55,37 +55,40 @@ class NovoItemDesejadoViewController: UIViewController, UITextFieldDelegate {
   }
   
   func adicionarProduto() {
-    if (textFieldNome.text!.isEmpty || textViewTags.text!.isEmpty) {
-      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_item_desejado", comment: ""), viewController: self)
-    } else {
-      var listaProdutos = loggedUser.objectForKey(usuarioKeyItensDesejados)
-      
-      if(listaProdutos == nil) {
-        listaProdutos = NSMutableArray()
-      }
-          
-      let itemDesejado = NSMutableDictionary()
-      itemDesejado.setObject(textFieldNome.text!, forKey: usuarioKeyItemDesejadoDescricao)
-      itemDesejado.setObject(textViewTags.text!, forKey: usuarioKeyItemDesejadoTags)
-      
-      listaProdutos?.addObject(itemDesejado)
-      
-      loggedUser.setObject(listaProdutos!, forKey: usuarioKeyItensDesejados)
-      
-      loggedUser.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-        if succeeded {
-          let itemCadastrado = UIAlertAction(title: "OK", style: .Default) { (action) in
-            self.textViewTags.resignFirstResponder()
-            self.textFieldNome.resignFirstResponder()
-            self.navigationController?.popViewControllerAnimated(true)
+    if (isConnectedToNetwork()) {
+      if (textFieldNome.text!.isEmpty || textViewTags.text!.isEmpty) {
+        showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_item_desejado", comment: ""), viewController: self)
+      } else {
+        var listaProdutos = loggedUser.objectForKey(usuarioKeyItensDesejados)
+        
+        if(listaProdutos == nil) {
+          listaProdutos = NSMutableArray()
+        }
+            
+        let itemDesejado = NSMutableDictionary()
+        itemDesejado.setObject(textFieldNome.text!, forKey: usuarioKeyItemDesejadoDescricao)
+        itemDesejado.setObject(textViewTags.text!, forKey: usuarioKeyItemDesejadoTags)
+        
+        listaProdutos?.addObject(itemDesejado)
+        
+        loggedUser.setObject(listaProdutos!, forKey: usuarioKeyItensDesejados)
+        
+        loggedUser.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+          if succeeded {
+            let itemCadastrado = UIAlertAction(title: "OK", style: .Default) { (action) in
+              self.textViewTags.resignFirstResponder()
+              self.textFieldNome.resignFirstResponder()
+              self.navigationController?.popViewControllerAnimated(true)
+            }
+            showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_item_adicionado", comment: ""), viewController: self, action: itemCadastrado)
+          } else {
+            showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: "msg_erro_cadastro_item", viewController: self)
           }
-          showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_item_adicionado", comment: ""), viewController: self, action: itemCadastrado)
-        } else {
-          showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: "msg_erro_cadastro_item", viewController: self)
         }
       }
+    } else {
+      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_internet", comment: ""), viewController: self)
     }
-    
   }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {

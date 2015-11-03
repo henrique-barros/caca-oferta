@@ -20,9 +20,8 @@ class DetalhesLojaTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     print(loja.description)
-    self.atualizarNavigationBar()
     
-    tableView.backgroundColor = UIColor(red: 255/255, green: 240/255, blue: 245/255, alpha: 1)
+    tableView.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 72/255, alpha: 1)
     
     navigationItem.title = NSLocalizedString("title_detalhes_loja", comment: "")
   }
@@ -48,13 +47,13 @@ class DetalhesLojaTableViewController: UITableViewController {
     let cell = tableView.dequeueReusableCellWithIdentifier(produtoCell) as UITableViewCell?
     
     if indexPath.row % 2 == 0 {
-      cell!.contentView.backgroundColor = UIColor(red: 240/255, green: 250/255, blue: 255/255, alpha: 1)
+      cell!.contentView.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 72/255, alpha: 1)
     } else {
-      cell!.contentView.backgroundColor = UIColor(red: 255/255, green: 240/255, blue: 245/255, alpha: 1)
+      cell!.contentView.backgroundColor = UIColor(red: 192/255, green: 170/255, blue: 82/255, alpha: 1)
     }
     
     let labelDescricao = cell!.viewWithTag(descricaoProdutoTag) as! UILabel?
-    labelDescricao!.text = produtos[indexPath.row].objectForKey(produtoKeyDescricao) as! String?
+    labelDescricao!.text = (produtos[indexPath.row].objectForKey(produtoKeyDescricao) as! String?)!.capitalizedString
     
     let buttonDelete = cell?.viewWithTag(tagDeleteButton) as! UIButton
     buttonDelete.accessibilityValue = "\(indexPath.row)"
@@ -63,15 +62,6 @@ class DetalhesLojaTableViewController: UITableViewController {
     return cell!
   }
   
-  func atualizarNavigationBar() {
-    self.navigationItem.title = "Produtos2"
-    let botaoAdicionar = UIBarButtonItem(customView:
-      BotaoAdicionar(frame:CGRectMake(0, 0, 30, 30), target: self,
-        selector: Selector("onButtonTouchUpInsideNavigationBar:")))
-    
-    //var botaoAdicionar = UIBarButtonItem(image: UIImage(contentsOfFile: "plus-2-24.png"), style: UIBarButtonItemStyle.Plain, target: self, action: Selector("adicionarProduto"))
-    self.navigationItem.setRightBarButtonItem(botaoAdicionar, animated: false)
-  }
   
   override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     let view = UIView(frame: CGRect(x: 0.0,y: 0.0,width: self.view.frame.width,height: 40))

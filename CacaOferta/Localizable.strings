@@ -11,6 +11,7 @@
 "atencao" = "Atenção";
 "ok" = "Ok";
 "cancel" = "Cancelar";
+"msg_erro_internet" = "Verifique sua conexão com a internet.";
 
 
 // MapaProdutoController
@@ -22,7 +23,7 @@
 "msg_erro_cadastro_loja" = "Ocorreu um erro no cadastro da loja.";
 "msg_erro_informacoes_loja" = "Faltam informações obrigatórias a serem preenchidas para o cadastro da loja.";
 "msg_erro_busca_minha_localizacao" = "Não foi possível encontrar sua localização, verifique se o GPS está ativado.";
-"msg_erro_busca_endereco" = "Não foi possível encontrar a localização do endereço entrado. Verifique se foi digitado corretamente.";
+"msg_erro_busca_endereco" = "Não foi possível encontrar a localização do endereço entrado. Verifique se foi digitado corretamente ou se há conexão com a internet.";
 "title_adicionar_loja" = "Adicionar Loja";
 "label_nome" = "Nome:";
 "label_local" = "Local:";
@@ -35,6 +36,8 @@
 "msg_ok_usuario_cadastrado" = "Usuário cadastrado com sucesso.";
 "msg_erro_cadastro_usuario" = "Ocorreu um erro no cadastro do usuário.";
 "msg_erro_informacoes_usuario" = "Faltam informações obrigatórias a serem preenchidas para o cadastro do usuário.";
+"msg_erro_usuario_cadastrado" = "Login já cadastrado.";
+"msg_erro_email_cadastrado" = "E-mail já cadastrado.";
 "label_email" = "Email:";
 "botao_voltar" = "Voltar";
 "botao_cadastrar" = "Cadastrar";
@@ -81,4 +84,7 @@
 
 //Titulo
 "nome_app" = "Caça Oferta";
+
+//DetalhesLocalizacaoViewController
+"label_dinheiro" = "R$";
 

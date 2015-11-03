@@ -26,11 +26,11 @@ class ListaComprasTVC: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tableView.backgroundColor = UIColor(red: 255/255, green: 240/255, blue: 245/255, alpha: 1)
+    tableView.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 72/255, alpha: 1)
     
     self.tabBarController?.title = NSLocalizedString("nome_app", comment: "")
     
-    let botaoLogout = UIBarButtonItem(customView: BotaoLogout(frame: CGRectMake(0, 0, 30, 30), target: self, selector: Selector("logout"), image: UIImage(named: "logout-24blue.png")!))
+    let botaoLogout = UIBarButtonItem(customView: BotaoLogout(frame: CGRectMake(0, 0, 30, 30), target: self, selector: Selector("logout"), image: UIImage(named: "logout-24")!))
     self.tabBarController?.navigationItem.setRightBarButtonItem(botaoLogout, animated: false)
     
     atualizarTextos()
@@ -75,13 +75,13 @@ class ListaComprasTVC: UITableViewController {
     let cell: UITableViewCell = (tableView.dequeueReusableCellWithIdentifier(itemCell))!
     
     if indexPath.row % 2 == 0 {
-      cell.contentView.backgroundColor = UIColor(red: 240/255, green: 250/255, blue: 255/255, alpha: 1)
+      cell.contentView.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 72/255, alpha: 1)
     } else {
-      cell.contentView.backgroundColor = UIColor(red: 255/255, green: 240/255, blue: 245/255, alpha: 1)
+      cell.contentView.backgroundColor = UIColor(red: 192/255, green: 170/255, blue: 82/255, alpha: 1)
     }
     
     let voLabel = cell.viewWithTag(tagItem) as? UILabel
-    voLabel?.text = vlsItens.objectAtIndex(indexPath.row).objectForKey(usuarioKeyItemDesejadoDescricao) as? String
+    voLabel?.text = (vlsItens.objectAtIndex(indexPath.row).objectForKey(usuarioKeyItemDesejadoDescricao) as? String)!.capitalizedString
     
     let vbDeleteButton = cell.viewWithTag(tagDeleteButton) as? UIButton
     vbDeleteButton?.accessibilityValue = "\(indexPath.row)"

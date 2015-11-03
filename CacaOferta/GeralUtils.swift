@@ -9,6 +9,7 @@
 
 import UIKit
 import MapKit
+import SystemConfiguration
 
 var bla = "string1"
 var loggedUser: PFUser = PFUser()
@@ -58,4 +59,20 @@ func doLogout(viewController: UIViewController) {
     viewController.tabBarController?.dismissViewControllerAnimated(false, completion: nil)
   }
   showSimpleAlertWithConfirmAction(NSLocalizedString("atencao", comment: ""), message: NSLocalizedString("msg_alerta_logout", comment: ""), viewController: viewController, action: action)
+}
+
+func isConnectedToNetwork() -> Bool {
+  var zeroAddress = sockaddr_in()
+  zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
+  zeroAddress.sin_family = sa_family_t(AF_INET)
+  let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
+    SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0))
+  }
+  var flags = SCNetworkReachabilityFlags()
+  if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+    return false
+  }
+  let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+  let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+  return (isReachable && !needsConnection)
 }

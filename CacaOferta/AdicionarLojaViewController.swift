@@ -39,6 +39,7 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
     textFieldNome.delegate = self
     textFieldEndereco.delegate = self
     atualizarTextos()
+    tableView.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 72/255, alpha: 1)
   }
   func atualizarTextos() {
     botaoMeuLocal.setTitle(NSLocalizedString("botao_meu_local", comment: ""), forState: UIControlState.Normal)
@@ -77,27 +78,31 @@ class AdicionarLojaViewController: UITableViewController, CLLocationManagerDeleg
   }
   
   func adicionarLojaComDadosDaTela() {
-    if ((!textFieldEndereco.text!.isEmpty || !mapView.annotations.isEmpty) && !textFieldNome.text!.isEmpty) {
-      print(loggedUser.username)
-      let annotation = mapView.annotations.first as MKAnnotation?
-      let loja = Loja(coordinate: (annotation?.coordinate)!, nome: textFieldNome.text!, descricao: "",dono: loggedUser.username!).objetoParseComLoja()
-      loja.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-        if succeeded {
-          let lojaCadastrada = UIAlertAction(title: "OK", style: .Default) { (action) in
-            self.textFieldNome.resignFirstResponder()
-            self.textFieldEndereco.resignFirstResponder()
-            self.navigationController?.popViewControllerAnimated(true)
+    if (isConnectedToNetwork()) {
+      if ((!textFieldEndereco.text!.isEmpty || !mapView.annotations.isEmpty) && !textFieldNome.text!.isEmpty) {
+        print(loggedUser.username)
+        let annotation = mapView.annotations.first as MKAnnotation?
+        let loja = Loja(coordinate: (annotation?.coordinate)!, nome: textFieldNome.text!, descricao: "",dono: loggedUser.username!).objetoParseComLoja()
+        loja.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+          if succeeded {
+            let lojaCadastrada = UIAlertAction(title: "OK", style: .Default) { (action) in
+              self.textFieldNome.resignFirstResponder()
+              self.textFieldEndereco.resignFirstResponder()
+              self.navigationController?.popViewControllerAnimated(true)
+            }
+            showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_loja_adicionada", comment: ""), viewController: self, action: lojaCadastrada)
+          } else {
+            print("Error: \(error) \(error!.userInfo)")
+            showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_cadastro_loja", comment: ""), viewController: self)
           }
-          showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_loja_adicionada", comment: ""), viewController: self, action: lojaCadastrada)
-        } else {
-          print("Error: \(error) \(error!.userInfo)")
-          showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_cadastro_loja", comment: ""), viewController: self)
         }
       }
-    }
-    else {
-      print("Falta informação")
-      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_loja", comment: ""), viewController: self)
+      else {
+        print("Falta informação")
+        showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_informacoes_loja", comment: ""), viewController: self)
+      }
+    } else {
+      showSimpleAlertWithTitle(NSLocalizedString("erro", comment: ""), message: NSLocalizedString("msg_erro_internet", comment: ""), viewController: self)
     }
   }
   
