@@ -650,6 +650,7 @@
                                     <constraint firstItem="3xt-7b-U8t" firstAttribute="leading" secondItem="Lz5-2C-hcY" secondAttribute="leading" id="WZR-hM-Y8n"/>
                                     <constraint firstItem="oyA-vT-1TS" firstAttribute="leading" secondItem="quh-fS-vxE" secondAttribute="leading" id="XMr-QK-VWh"/>
                                     <constraint firstItem="oyA-vT-1TS" firstAttribute="leading" secondItem="D61-jZ-bc6" secondAttribute="trailing" constant="14" id="ZlT-ec-tb7"/>
+                                    <constraint firstItem="LLN-Wf-a3q" firstAttribute="bottom" secondItem="Lz5-2C-hcY" secondAttribute="bottomMargin" id="ayo-VH-lTT"/>
                                     <constraint firstAttribute="trailing" secondItem="IIn-s3-ch5" secondAttribute="trailing" id="bjx-5F-cIf"/>
                                     <constraint firstAttribute="bottom" secondItem="IIn-s3-ch5" secondAttribute="bottom" constant="26" id="cCq-km-qPn"/>
                                     <constraint firstItem="oyA-vT-1TS" firstAttribute="trailing" secondItem="quh-fS-vxE" secondAttribute="trailing" id="dU7-IH-QbC"/>
@@ -680,6 +681,7 @@
                                         <exclude reference="IPW-gp-bWw"/>
                                         <exclude reference="Lkc-vh-7Xb"/>
                                         <exclude reference="VMv-zh-M55"/>
+                                        <exclude reference="ayo-VH-lTT"/>
                                         <exclude reference="eqv-Lg-7rF"/>
                                         <exclude reference="r1v-Un-OJT"/>
                                     </mask>
@@ -718,6 +720,7 @@
                                         <include reference="IPW-gp-bWw"/>
                                         <include reference="Lkc-vh-7Xb"/>
                                         <include reference="VMv-zh-M55"/>
+                                        <include reference="ayo-VH-lTT"/>
                                         <include reference="eqv-Lg-7rF"/>
                                         <exclude reference="611-lD-OhG"/>
                                         <exclude reference="C9M-tm-8EY"/>
@@ -732,6 +735,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.75294117647058822" green="0.66666666666666663" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Lz5-2C-hcY" firstAttribute="centerY" secondItem="4gH-iK-C69" secondAttribute="centerY" id="7Ch-lD-mLg"/>
                             <constraint firstItem="xbG-WC-vIe" firstAttribute="top" secondItem="Lz5-2C-hcY" secondAttribute="bottom" constant="495" id="APx-Bx-b6w"/>
                             <constraint firstItem="Lz5-2C-hcY" firstAttribute="top" secondItem="Krs-fm-vcb" secondAttribute="bottom" constant="69" id="Aly-ih-AUW"/>
                             <constraint firstItem="Lz5-2C-hcY" firstAttribute="centerX" secondItem="4gH-iK-C69" secondAttribute="centerX" id="O9o-8H-Ea4"/>
@@ -742,6 +746,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="7Ch-lD-mLg"/>
                                 <exclude reference="Aly-ih-AUW"/>
                                 <exclude reference="SkA-yg-GAr"/>
                                 <exclude reference="APx-Bx-b6w"/>
@@ -752,12 +757,13 @@
                                 <include reference="Lz5-2C-hcY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Aly-ih-AUW"/>
+                                <include reference="7Ch-lD-mLg"/>
+                                <exclude reference="Aly-ih-AUW"/>
                                 <exclude reference="O9o-8H-Ea4"/>
                                 <exclude reference="RR7-DU-U6V"/>
                                 <include reference="SkA-yg-GAr"/>
                                 <exclude reference="fWt-Il-1a1"/>
-                                <include reference="APx-Bx-b6w"/>
+                                <exclude reference="APx-Bx-b6w"/>
                                 <exclude reference="hbQ-sD-Y2H"/>
                             </mask>
                         </variation>
@@ -774,7 +780,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eto-di-L88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237" y="-152.25"/>
+            <point key="canvasLocation" x="236.625" y="-152.625"/>
         </scene>
         <!--Cadastrar Usuario Table View Controller-->
         <scene sceneID="txK-5I-u2W">
@@ -899,6 +905,7 @@
                                     <constraint firstItem="9aM-pe-Vgb" firstAttribute="top" secondItem="6II-jF-uND" secondAttribute="top" id="StX-ey-swT"/>
                                     <constraint firstItem="iQD-xO-hSX" firstAttribute="trailing" secondItem="ENN-zB-9M3" secondAttribute="trailing" id="TQ4-g0-8wg"/>
                                     <constraint firstItem="rzb-ED-33W" firstAttribute="leading" secondItem="67u-2c-lZc" secondAttribute="leading" id="VF5-rH-Fnd"/>
+                                    <constraint firstAttribute="bottom" secondItem="6II-jF-uND" secondAttribute="bottom" id="VJg-Bx-IwI"/>
                                     <constraint firstItem="rzb-ED-33W" firstAttribute="leading" secondItem="9aM-pe-Vgb" secondAttribute="leading" id="YSo-zo-iSj"/>
                                     <constraint firstItem="XJ1-XR-AiJ" firstAttribute="top" secondItem="iQD-xO-hSX" secondAttribute="bottom" constant="5" id="Z4k-Ct-TYT"/>
                                     <constraint firstAttribute="trailing" secondItem="ENN-zB-9M3" secondAttribute="trailing" id="a08-VZ-291"/>
@@ -947,6 +954,7 @@
                                         <exclude reference="yAf-y4-OfG"/>
                                         <exclude reference="7Bs-L1-fYx"/>
                                         <exclude reference="F6k-6I-QE6"/>
+                                        <exclude reference="VJg-Bx-IwI"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -1008,6 +1016,7 @@
                                         <exclude reference="8Ne-JI-WWJ"/>
                                         <exclude reference="StX-ey-swT"/>
                                         <include reference="F6k-6I-QE6"/>
+                                        <include reference="VJg-Bx-IwI"/>
                                         <exclude reference="rbb-Qw-pkW"/>
                                     </mask>
                                 </variation>
@@ -1020,12 +1029,14 @@
                             <constraint firstItem="dTy-5Y-X41" firstAttribute="top" secondItem="dcP-2d-kK6" secondAttribute="bottom" constant="318" id="YrV-vB-3v1"/>
                             <constraint firstItem="dcP-2d-kK6" firstAttribute="top" secondItem="APW-yD-c1F" secondAttribute="bottom" constant="15" id="aE1-Zp-hDN"/>
                             <constraint firstItem="dcP-2d-kK6" firstAttribute="centerX" secondItem="SNw-vD-VGQ" secondAttribute="centerX" id="n51-SV-b3f"/>
+                            <constraint firstItem="dcP-2d-kK6" firstAttribute="centerY" secondItem="SNw-vD-VGQ" secondAttribute="centerY" id="oWt-wq-hkH"/>
                             <constraint firstItem="dcP-2d-kK6" firstAttribute="leading" secondItem="SNw-vD-VGQ" secondAttribute="leadingMargin" constant="5" id="xy7-IQ-cak"/>
                             <constraint firstItem="dcP-2d-kK6" firstAttribute="centerX" secondItem="SNw-vD-VGQ" secondAttribute="centerX" id="zop-n9-FDY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="aE1-Zp-hDN"/>
+                                <exclude reference="oWt-wq-hkH"/>
                                 <exclude reference="zop-n9-FDY"/>
                                 <exclude reference="YrV-vB-3v1"/>
                             </mask>
@@ -1036,12 +1047,13 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="7kx-MG-Bnc"/>
-                                <include reference="aE1-Zp-hDN"/>
+                                <exclude reference="aE1-Zp-hDN"/>
                                 <exclude reference="n51-SV-b3f"/>
+                                <include reference="oWt-wq-hkH"/>
                                 <exclude reference="xy7-IQ-cak"/>
                                 <include reference="zop-n9-FDY"/>
                                 <exclude reference="Cbn-jO-YQn"/>
-                                <include reference="YrV-vB-3v1"/>
+                                <exclude reference="YrV-vB-3v1"/>
                             </mask>
                         </variation>
                     </view>
@@ -1054,7 +1066,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98s-vL-FvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736.5" y="549.5"/>
+            <point key="canvasLocation" x="736.125" y="549.375"/>
         </scene>
         <!--Lista de Compras-->
         <scene sceneID="QjT-D2-NOc">
@@ -1125,7 +1137,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Lista" id="35h-iy-45w"/>
+                    <tabBarItem key="tabBarItem" title="Lista" image="shopping.png" selectedImage="shopping.png" id="35h-iy-45w"/>
                     <navigationItem key="navigationItem" title="Lista de Compras" id="ij1-Ko-B2L">
                         <barButtonItem key="rightBarButtonItem" image="plus-2-24.png" id="pq0-PW-N4W"/>
                     </navigationItem>
@@ -1480,6 +1492,7 @@
                                     <constraint firstAttribute="width" constant="290" id="SGm-a6-qkM"/>
                                     <constraint firstItem="NRj-rP-VeM" firstAttribute="trailing" secondItem="cKl-sB-ebp" secondAttribute="trailingMargin" id="VWd-W0-vd2"/>
                                     <constraint firstItem="NRj-rP-VeM" firstAttribute="leading" secondItem="P41-bH-aAa" secondAttribute="leading" id="WVZ-xP-ncm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sph-Pt-2iF" secondAttribute="bottom" id="Ybh-mJ-7Bh"/>
                                     <constraint firstItem="Re0-fo-Kme" firstAttribute="top" secondItem="NRj-rP-VeM" secondAttribute="top" id="alk-Kr-v9E"/>
                                     <constraint firstItem="NRj-rP-VeM" firstAttribute="trailing" secondItem="P41-bH-aAa" secondAttribute="trailing" id="edL-zi-n2U"/>
                                     <constraint firstItem="P41-bH-aAa" firstAttribute="top" secondItem="yfl-hD-chU" secondAttribute="top" id="h5X-45-fLo"/>
@@ -1510,6 +1523,7 @@
                                         <exclude reference="pDN-gC-HeF"/>
                                         <exclude reference="pRT-lt-RTc"/>
                                         <exclude reference="EWa-DT-Wtq"/>
+                                        <exclude reference="Ybh-mJ-7Bh"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -1546,6 +1560,7 @@
                                         <include reference="pDN-gC-HeF"/>
                                         <include reference="pRT-lt-RTc"/>
                                         <include reference="EWa-DT-Wtq"/>
+                                        <include reference="Ybh-mJ-7Bh"/>
                                         <exclude reference="jdo-Wn-dLC"/>
                                     </mask>
                                 </variation>
@@ -1559,12 +1574,14 @@
                             <constraint firstItem="cKl-sB-ebp" firstAttribute="top" secondItem="bvg-Ub-RO5" secondAttribute="bottom" constant="45" id="JOH-A4-NDO"/>
                             <constraint firstItem="M8V-1d-j4K" firstAttribute="top" secondItem="cKl-sB-ebp" secondAttribute="bottom" constant="96" id="TEn-L8-tJ4"/>
                             <constraint firstItem="cKl-sB-ebp" firstAttribute="centerX" secondItem="x64-oZ-NsF" secondAttribute="centerX" id="VaM-tK-ZRC"/>
+                            <constraint firstItem="cKl-sB-ebp" firstAttribute="centerY" secondItem="x64-oZ-NsF" secondAttribute="centerY" id="ZRA-Of-mLF"/>
                             <constraint firstItem="M8V-1d-j4K" firstAttribute="top" secondItem="cKl-sB-ebp" secondAttribute="bottom" constant="269" id="e1S-XR-Ulg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="4iZ-MV-BrP"/>
                                 <exclude reference="VaM-tK-ZRC"/>
+                                <exclude reference="ZRA-Of-mLF"/>
                                 <exclude reference="e1S-XR-Ulg"/>
                             </mask>
                         </variation>
@@ -1573,13 +1590,14 @@
                                 <include reference="cKl-sB-ebp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4iZ-MV-BrP"/>
+                                <exclude reference="4iZ-MV-BrP"/>
                                 <exclude reference="AGZ-YD-jyo"/>
                                 <exclude reference="GBn-hS-smG"/>
                                 <exclude reference="JOH-A4-NDO"/>
                                 <include reference="VaM-tK-ZRC"/>
+                                <include reference="ZRA-Of-mLF"/>
                                 <exclude reference="TEn-L8-tJ4"/>
-                                <include reference="e1S-XR-Ulg"/>
+                                <exclude reference="e1S-XR-Ulg"/>
                             </mask>
                         </variation>
                     </view>
@@ -1663,7 +1681,7 @@
                             <outlet property="delegate" destination="yhk-ik-GfH" id="WhS-Xt-2yX"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Lojas" id="9Js-Gb-kA1"/>
+                    <tabBarItem key="tabBarItem" title="Lojas" image="store.png" selectedImage="store.png" id="9Js-Gb-kA1"/>
                     <navigationItem key="navigationItem" title="Minhas Lojas" id="TWN-ja-7WD">
                         <barButtonItem key="rightBarButtonItem" image="plus-2-24.png" id="wQQ-XI-zaV"/>
                     </navigationItem>
@@ -1889,6 +1907,7 @@
                                     <constraint firstItem="uMv-mp-Dwo" firstAttribute="top" secondItem="ggz-35-xDK" secondAttribute="top" id="sA3-LQ-dkC"/>
                                     <constraint firstItem="uew-vn-OYa" firstAttribute="top" secondItem="uMv-mp-Dwo" secondAttribute="bottom" constant="18" id="xLD-wn-f3n"/>
                                     <constraint firstItem="UJa-zx-2Ff" firstAttribute="top" secondItem="uew-vn-OYa" secondAttribute="bottom" constant="17" id="xbC-mu-EUB"/>
+                                    <constraint firstItem="DwK-qL-rnP" firstAttribute="centerY" secondItem="DL3-31-bbc" secondAttribute="centerY" id="yUt-rM-3mI"/>
                                     <constraint firstItem="ggz-35-xDK" firstAttribute="leading" secondItem="Zad-TN-aSo" secondAttribute="leading" id="ygr-BF-4qM"/>
                                     <constraint firstItem="kzv-yx-pcZ" firstAttribute="leading" secondItem="eh3-gy-Mql" secondAttribute="trailing" constant="8" id="ykv-i7-yEr"/>
                                     <constraint firstItem="Zad-TN-aSo" firstAttribute="top" secondItem="ggz-35-xDK" secondAttribute="bottom" constant="8" id="zzJ-eT-8H6"/>
@@ -1919,6 +1938,7 @@
                                         <exclude reference="lzs-Le-nf9"/>
                                         <exclude reference="Bz8-IT-UyN"/>
                                         <exclude reference="FOo-dg-tTh"/>
+                                        <exclude reference="yUt-rM-3mI"/>
                                         <exclude reference="HjA-9x-W1n"/>
                                         <exclude reference="Ifs-vm-0TC"/>
                                         <exclude reference="0Jl-Cc-QoD"/>
@@ -1981,6 +2001,7 @@
                                         <exclude reference="EfU-Uo-HIq"/>
                                         <exclude reference="FOo-dg-tTh"/>
                                         <exclude reference="GB2-kg-MYK"/>
+                                        <include reference="yUt-rM-3mI"/>
                                         <exclude reference="HjA-9x-W1n"/>
                                         <exclude reference="Ifs-vm-0TC"/>
                                         <exclude reference="R24-Ui-H05"/>
@@ -2000,6 +2021,7 @@
                         </accessibility>
                         <constraints>
                             <constraint firstItem="DL3-31-bbc" firstAttribute="centerX" secondItem="OoT-Mg-CJ5" secondAttribute="centerX" id="0W9-ja-NWH"/>
+                            <constraint firstItem="DL3-31-bbc" firstAttribute="centerY" secondItem="OoT-Mg-CJ5" secondAttribute="centerY" id="132-UE-bfh"/>
                             <constraint firstItem="DL3-31-bbc" firstAttribute="leading" secondItem="OoT-Mg-CJ5" secondAttribute="leadingMargin" constant="-5" id="13K-FD-pWe"/>
                             <constraint firstItem="B3w-a9-J5I" firstAttribute="top" secondItem="DL3-31-bbc" secondAttribute="bottom" constant="128" id="h9r-kT-It6"/>
                             <constraint firstItem="DL3-31-bbc" firstAttribute="top" secondItem="CAi-ZZ-gkg" secondAttribute="bottom" constant="10" id="r1T-hJ-D7h"/>
@@ -2010,6 +2032,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0W9-ja-NWH"/>
+                                <exclude reference="132-UE-bfh"/>
                                 <exclude reference="t1l-xQ-muH"/>
                                 <exclude reference="tKF-ka-4VU"/>
                             </mask>
@@ -2020,12 +2043,13 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="0W9-ja-NWH"/>
+                                <include reference="132-UE-bfh"/>
                                 <exclude reference="13K-FD-pWe"/>
                                 <exclude reference="r1T-hJ-D7h"/>
                                 <exclude reference="s6y-gc-JvM"/>
-                                <include reference="t1l-xQ-muH"/>
+                                <exclude reference="t1l-xQ-muH"/>
                                 <exclude reference="h9r-kT-It6"/>
-                                <include reference="tKF-ka-4VU"/>
+                                <exclude reference="tKF-ka-4VU"/>
                             </mask>
                         </variation>
                     </view>
@@ -2046,5 +2070,7 @@
     <resources>
         <image name="minus-2-24(1).png" width="24" height="24"/>
         <image name="plus-2-24.png" width="24" height="24"/>
+        <image name="shopping.png" width="24" height="24"/>
+        <image name="store.png" width="24" height="24"/>
     </resources>
 </document>

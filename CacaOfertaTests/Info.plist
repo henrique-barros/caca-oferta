@@ -15,13 +15,13 @@
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
+	<string>AAPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>CCOF</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>O Caça Oferta requer acesso à localização de seu dispositivo para te enviar notificações de lojas próximas.</string>
 	<key>UIMainStoryboardFile</key>

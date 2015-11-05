@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B701F3F71BDC21B800259614 /* BotaoLogout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701F3F61BDC21B800259614 /* BotaoLogout.swift */; settings = {ASSET_TAGS = (); }; };
+		B71687321BE9281800168C80 /* store.png in Resources */ = {isa = PBXBuildFile; fileRef = B71687311BE9281800168C80 /* store.png */; settings = {ASSET_TAGS = (); }; };
+		B71687341BE9281D00168C80 /* shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = B71687331BE9281D00168C80 /* shopping.png */; settings = {ASSET_TAGS = (); }; };
 		B7253C461B8E619300795D5A /* BotaoAdicionar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7253C451B8E619300795D5A /* BotaoAdicionar.swift */; };
 		B7253C4A1B8E6BC600795D5A /* DetalhesLojaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7253C491B8E6BC600795D5A /* DetalhesLojaTableViewController.swift */; };
 		B73573421B5ABEDE00AE36FA /* ListaComprasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73573411B5ABEDE00AE36FA /* ListaComprasTVC.swift */; };
@@ -49,7 +51,6 @@
 		B7AB4BE71B359D4E00F3FB0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AB4BE51B359D4E00F3FB0C /* Main.storyboard */; };
 		B7AB4BE91B359D4E00F3FB0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7AB4BE81B359D4E00F3FB0C /* Images.xcassets */; };
 		B7AB4BEC1B359D4E00F3FB0C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7AB4BEA1B359D4E00F3FB0C /* LaunchScreen.xib */; };
-		B7AB4BF81B359D4E00F3FB0C /* CacaOfertaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4BF71B359D4E00F3FB0C /* CacaOfertaTests.swift */; };
 		B7AB4C021B359D6D00F3FB0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AB4C011B359D6D00F3FB0C /* MapKit.framework */; };
 		B7AB4C041B35A6D100F3FB0C /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AB4C031B35A6D100F3FB0C /* MapPin.swift */; };
 		B7B39FF41BD12AA500F014E6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7B39FF31BD12AA500F014E6 /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
@@ -58,18 +59,10 @@
 		B7F551B51B35C1F200000697 /* plus-2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = B7F551B41B35C1F200000697 /* plus-2-48.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B7AB4BF21B359D4E00F3FB0C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B7AB4BD41B359D4E00F3FB0C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B7AB4BDB1B359D4E00F3FB0C;
-			remoteInfo = CompreFacil;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		B701F3F61BDC21B800259614 /* BotaoLogout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotaoLogout.swift; sourceTree = "<group>"; };
+		B71687311BE9281800168C80 /* store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = store.png; sourceTree = "<group>"; };
+		B71687331BE9281D00168C80 /* shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shopping.png; sourceTree = "<group>"; };
 		B7253C451B8E619300795D5A /* BotaoAdicionar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotaoAdicionar.swift; sourceTree = "<group>"; };
 		B7253C491B8E6BC600795D5A /* DetalhesLojaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesLojaTableViewController.swift; sourceTree = "<group>"; };
 		B73573411B5ABEDE00AE36FA /* ListaComprasTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaComprasTVC.swift; sourceTree = "<group>"; };
@@ -109,12 +102,11 @@
 		B7A456C71BE822A90017B52D /* logout-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-24.png"; sourceTree = "<group>"; };
 		B7A51D711B35BBDD00FBB5EB /* circle-16(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-16(1).png"; sourceTree = "<group>"; };
 		B7AB4BDC1B359D4E00F3FB0C /* CacaOferta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CacaOferta.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7AB4BE01B359D4E00F3FB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7AB4BE01B359D4E00F3FB0C /* CacaOferta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CacaOferta-Info.plist"; sourceTree = "<group>"; };
 		B7AB4BE11B359D4E00F3FB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7AB4BE61B359D4E00F3FB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7AB4BE81B359D4E00F3FB0C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B7AB4BEB1B359D4E00F3FB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B7AB4BF11B359D4E00F3FB0C /* CacaOfertaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CacaOfertaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AB4BF61B359D4E00F3FB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7AB4BF71B359D4E00F3FB0C /* CacaOfertaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacaOfertaTests.swift; sourceTree = "<group>"; };
 		B7AB4C011B359D6D00F3FB0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -149,13 +141,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7AB4BEE1B359D4E00F3FB0C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -172,6 +157,8 @@
 		B73573401B5ABE2800AE36FA /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B71687311BE9281800168C80 /* store.png */,
+				B71687331BE9281D00168C80 /* shopping.png */,
 				B7A456C31BE822570017B52D /* plus-2-24.png */,
 				B7A456C71BE822A90017B52D /* logout-24.png */,
 				B7A51D711B35BBDD00FBB5EB /* circle-16(1).png */,
@@ -223,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				B7AB4BDC1B359D4E00F3FB0C /* CacaOferta.app */,
-				B7AB4BF11B359D4E00F3FB0C /* CacaOfertaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +227,7 @@
 				B7AB4BE51B359D4E00F3FB0C /* Main.storyboard */,
 				B7AB4BE81B359D4E00F3FB0C /* Images.xcassets */,
 				B7AB4BEA1B359D4E00F3FB0C /* LaunchScreen.xib */,
+				B7AB4BE01B359D4E00F3FB0C /* CacaOferta-Info.plist */,
 				B7AB4BDF1B359D4E00F3FB0C /* Supporting Files */,
 			);
 			path = CacaOferta;
@@ -249,7 +236,6 @@
 		B7AB4BDF1B359D4E00F3FB0C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B7AB4BE01B359D4E00F3FB0C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -327,24 +313,6 @@
 			productReference = B7AB4BDC1B359D4E00F3FB0C /* CacaOferta.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B7AB4BF01B359D4E00F3FB0C /* CacaOfertaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B7AB4BFE1B359D4E00F3FB0C /* Build configuration list for PBXNativeTarget "CacaOfertaTests" */;
-			buildPhases = (
-				B7AB4BED1B359D4E00F3FB0C /* Sources */,
-				B7AB4BEE1B359D4E00F3FB0C /* Frameworks */,
-				B7AB4BEF1B359D4E00F3FB0C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B7AB4BF31B359D4E00F3FB0C /* PBXTargetDependency */,
-			);
-			name = CacaOfertaTests;
-			productName = CompreFacilTests;
-			productReference = B7AB4BF11B359D4E00F3FB0C /* CacaOfertaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -363,11 +331,10 @@
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
-					};
-					B7AB4BF01B359D4E00F3FB0C = {
-						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = U5ALRE3DZ6;
 					};
 				};
 			};
@@ -385,7 +352,6 @@
 			projectRoot = "";
 			targets = (
 				B7AB4BDB1B359D4E00F3FB0C /* CacaOferta */,
-				B7AB4BF01B359D4E00F3FB0C /* CacaOfertaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -403,19 +369,14 @@
 				B7AB4BEC1B359D4E00F3FB0C /* LaunchScreen.xib in Resources */,
 				B7A456C41BE822570017B52D /* plus-2-24.png in Resources */,
 				B7F551B51B35C1F200000697 /* plus-2-48.png in Resources */,
+				B71687321BE9281800168C80 /* store.png in Resources */,
 				B7A51D721B35BBDD00FBB5EB /* circle-16(1).png in Resources */,
 				B75558A81B35BA3B00FF554C /* circle-16.png in Resources */,
 				B76893601B5AD37C007E6580 /* minus-2-24(1).png in Resources */,
 				B7B39FF41BD12AA500F014E6 /* Localizable.strings in Resources */,
 				B7AB4BE91B359D4E00F3FB0C /* Images.xcassets in Resources */,
+				B71687341BE9281D00168C80 /* shopping.png in Resources */,
 				B768935E1B5AD30D007E6580 /* minus-2-24.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7AB4BEF1B359D4E00F3FB0C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,23 +408,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7AB4BED1B359D4E00F3FB0C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7AB4BF81B359D4E00F3FB0C /* CacaOfertaTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B7AB4BF31B359D4E00F3FB0C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B7AB4BDB1B359D4E00F3FB0C /* CacaOferta */;
-			targetProxy = B7AB4BF21B359D4E00F3FB0C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B7AB4BE51B359D4E00F3FB0C /* Main.storyboard */ = {
@@ -502,8 +447,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -523,11 +468,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = /Developer/CompreFacil/CacaOfertaTests/Info.plist;
+				INFOPLIST_FILE = "CacaOferta/CacaOferta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
+				PROVISIONING_PROFILE = "91caee95-b56b-4e05-86d8-5b4ea30a9db0";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,8 +496,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -565,10 +510,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = /Developer/CompreFacil/CacaOfertaTests/Info.plist;
+				INFOPLIST_FILE = "CacaOferta/CacaOferta-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "91caee95-b56b-4e05-86d8-5b4ea30a9db0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -580,18 +526,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/CacaOfertaTests/Info.plist";
+				INFOPLIST_FILE = "CacaOferta/CacaOferta-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Example.CacaOferta;
 				PRODUCT_NAME = CacaOferta;
-				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
+				PROVISIONING_PROFILE = "91caee95-b56b-4e05-86d8-5b4ea30a9db0";
 				SWIFT_OBJC_BRIDGING_HEADER = "CacaOferta-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -602,57 +549,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: henriquesb6@hotmail.com (HAU2DQWXHY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henrique Barros (U5ALRE3DZ6)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/CacaOfertaTests/Info.plist";
+				INFOPLIST_FILE = "CacaOferta/CacaOferta-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Example.CacaOferta;
 				PRODUCT_NAME = CacaOferta;
-				PROVISIONING_PROFILE = "e4aadba6-17de-4c27-a4ac-eb54ca707a1d";
+				PROVISIONING_PROFILE = "91caee95-b56b-4e05-86d8-5b4ea30a9db0";
 				SWIFT_OBJC_BRIDGING_HEADER = "CacaOferta-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		B7AB4BFF1B359D4E00F3FB0C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CacaOfertaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = CacaOfertaTests;
-				PROVISIONING_PROFILE = "";
-			};
-			name = Debug;
-		};
-		B7AB4C001B359D4E00F3FB0C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CacaOfertaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = CacaOfertaTests;
-				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -673,15 +583,6 @@
 			buildConfigurations = (
 				B7AB4BFC1B359D4E00F3FB0C /* Debug */,
 				B7AB4BFD1B359D4E00F3FB0C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B7AB4BFE1B359D4E00F3FB0C /* Build configuration list for PBXNativeTarget "CacaOfertaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B7AB4BFF1B359D4E00F3FB0C /* Debug */,
-				B7AB4C001B359D4E00F3FB0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

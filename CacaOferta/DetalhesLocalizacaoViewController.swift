@@ -20,7 +20,7 @@ class DetalhesLocalizacaoViewController: UITableViewController {
   
   
   var loja = NSMutableDictionary()
-  var produtos = [NSMutableDictionary]()
+  var produtos = NSMutableArray()
   var item = NSMutableDictionary()
   
   override func viewDidLoad() {
@@ -39,6 +39,7 @@ class DetalhesLocalizacaoViewController: UITableViewController {
     let nomeLoja = loja.objectForKey(lojaKeyNome) as! String
     print(nomeLoja.capitalizedString)
     navigationItem.title = nomeLoja.capitalizedString
+    
     
   }
   

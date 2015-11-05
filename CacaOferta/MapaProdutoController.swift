@@ -17,14 +17,28 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
   var item = NSMutableDictionary()
   let locationManager = CLLocationManager()
   var produtoRelevanteDoItem = [NSMutableDictionary]()
+  var produtoPorLoja = NSMutableDictionary()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    navigationItem.title = (item.objectForKey(usuarioKeyItemDesejadoDescricao) as? String)!.capitalizedString
     mapView.delegate = self
     locationManager.delegate = self
     locationManager.requestAlwaysAuthorization()
     locationManager.startUpdatingLocation()
+    zoomParaRegiaoDoUsuario()
     mostrarLojasProximas()
+    _ = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("mostrarLojasProximas"), userInfo: nil, repeats: true)
+  }
+  
+  func zoomParaRegiaoDoUsuario() {
+    var region = MKCoordinateRegion()
+    if (locationManager.location != nil) {
+      region.center = (locationManager.location?.coordinate)!
+      region.span.latitudeDelta = 0.01;
+      region.span.longitudeDelta = 0.01;
+      mapView.setRegion(region, animated: true)
+    }
   }
   
   func getProdutosRelevantesDoItem() -> [NSMutableDictionary] {
@@ -56,7 +70,8 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
   func mostrarLojasProximas() {
     
     produtoRelevanteDoItem = getProdutosRelevantesDoItem()
-    
+    produtoPorLoja = NSMutableDictionary()
+    self.mapView.removeAnnotations(self.mapView.annotations)
     for produto in produtoRelevanteDoItem {
       let query = PFQuery(className: produtoKeyClass)
       query.whereKey("objectId", equalTo: produto.objectForKey("objectId") as! String)
@@ -74,6 +89,13 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
           let descricao = loja.objectForKey(lojaKeyDescricao) as! String
           let id = loja.objectForKey(lojaKeyId) as! String
           let pin = MapPin(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), title: nome.capitalizedString, subtitle: descricao.capitalizedString, id: id)
+          if (self.produtoPorLoja.objectForKey(id) == nil) {
+            let arrayProdutosLoja = NSMutableArray()
+            arrayProdutosLoja.addObject(produto)
+            self.produtoPorLoja.setObject(arrayProdutosLoja, forKey: id)
+          } else {
+            (self.produtoPorLoja.objectForKey(id) as! NSMutableArray).addObject(produto)
+          }
           self.mapView.addAnnotation(pin)
         })
       })
@@ -86,9 +108,10 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
     for loja in lojasRelevantes {
       if loja.objectForKey(lojaKeyId) as! String == idLoja {
         detalhes.loja = loja as! NSMutableDictionary
+        detalhes.produtos = produtoPorLoja.objectForKey(idLoja) as! NSMutableArray
       }
     }
-    detalhes.produtos = produtoRelevanteDoItem
+    //detalhes.produtos = produtoRelevanteDoItem
     self.navigationController?.showViewController(detalhes, sender: self)
   }
   

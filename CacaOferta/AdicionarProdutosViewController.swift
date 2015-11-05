@@ -92,7 +92,7 @@ class AdicionarProdutosViewController: UIViewController, UITextFieldDelegate {
               self.textFieldMarca.resignFirstResponder()
               self.textFieldValor.resignFirstResponder()
               self.textViewTags.resignFirstResponder()
-              self.dismissViewControllerAnimated(true, completion: nil)
+              self.navigationController?.popViewControllerAnimated(true)
             }
             showSimpleAlertWithAction(NSLocalizedString("ok", comment: ""), message: NSLocalizedString("msg_produto_adicionado", comment: ""), viewController: self, action: produtoCadastrado)
           } else {
