@@ -1,6 +1,7 @@
 # Xcode
 .DS_Store
 build/
+CacaOferta/api_keys.swift
 *.pbxuser
 !default.pbxuser
 *.mode1v3

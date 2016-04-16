@@ -50,12 +50,19 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     tagItem.append(item.objectForKey(usuarioKeyItemDesejadoDescricao)! as! String)
     tagItem = tagItem.map { (string) -> String in string.uppercaseString}
+    print("tagitem")
+    print(tagItem)
+    
     
     var produtoRelevanteDoItem = [NSMutableDictionary]()
     for produto in produtosRelevantes {
       var produtoTags = produto.objectForKey(produtoKeyTags) as! [String]
       produtoTags.append(produto.objectForKey(produtoKeyDescricao) as! String)
       produtoTags = produtoTags.map { (string) -> String in string.uppercaseString}
+      
+      print("match")
+      print(tagItem)
+      print(produtoTags)
             
       let set1 = Set(tagItem)
       let set2 = Set(produtoTags)
@@ -68,11 +75,12 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
   }
   
   func mostrarLojasProximas() {
-    
+    print("mostrarLojasProximas")
     produtoRelevanteDoItem = getProdutosRelevantesDoItem()
     produtoPorLoja = NSMutableDictionary()
     self.mapView.removeAnnotations(self.mapView.annotations)
     for produto in produtoRelevanteDoItem {
+      print("achoualgo")
       let query = PFQuery(className: produtoKeyClass)
       query.whereKey("objectId", equalTo: produto.objectForKey("objectId") as! String)
       query.findObjectsInBackgroundWithBlock({
@@ -82,6 +90,7 @@ class MapaProdutoController: UIViewController, MKMapViewDelegate, CLLocationMana
         let query2 = relation.query()
         query2?.findObjectsInBackgroundWithBlock({
           (objects: [AnyObject]?, error: NSError?) in
+          print("achoualgo")
           let loja = objects?.first as! PFObject
           let latitude = (loja.objectForKey(lojaKeyGeoPoint) as! PFGeoPoint).latitude
           let longitude = (loja.objectForKey(lojaKeyGeoPoint) as! PFGeoPoint).longitude

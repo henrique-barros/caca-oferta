@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
   let locationManager = CLLocationManager() // Add this statement
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    Parse.setApplicationId("ZUcFKMC2mxM5T3F1yfIrCpFsCNGZgYqOZbpyeb2p", clientKey: "1B8UweGBMEFFuv9mmhk2wMeXZqBDtj1FPW1J7BDS")
+    Parse.setApplicationId(appId, clientKey: clientKey)
     
     
     //Enable push notifications
@@ -124,6 +124,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
       let data = try NSJSONSerialization.dataWithJSONObject(userInfo, options: NSJSONWritingOptions.PrettyPrinted)
       
       json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+      
+      print(json)
       
       if (json.objectForKey(keyLojasRelevantes)?.firstObject != nil) {
         lojasRelevantes = json.objectForKey(keyLojasRelevantes) as! NSMutableArray

@@ -59,8 +59,12 @@ class DetalhesLocalizacaoViewController: UITableViewController {
     let textFieldMarca = cell?.viewWithTag(tagTextFieldMarcaProduto) as! UITextField
     textFieldMarca.text = (produtos[indexPath.row].objectForKey(produtoKeyMarca) as? String)?.capitalizedString
     
+    var formatter = NSNumberFormatter()
+    formatter.numberStyle = .CurrencyStyle
+    
+    
     let textFieldPreco = cell?.viewWithTag(tagTextFieldPrecoProduto) as! UITextField
-    textFieldPreco.text = NSLocalizedString("label_dinheiro", comment: "") + String((produtos[indexPath.row] .objectForKey(produtoKeyPreco) as! Double)).capitalizedString
+    textFieldPreco.text = (formatter.stringFromNumber(produtos[indexPath.row] .objectForKey(produtoKeyPreco) as! NSNumber))!.capitalizedString
     
     return cell!    
   }
